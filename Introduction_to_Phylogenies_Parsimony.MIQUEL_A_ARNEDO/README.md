@@ -34,7 +34,7 @@ TNT uses it own format. Supposedly, also accepts NEXUS format, although it is a 
 
 You can download the dataset in different formats using the following instructions (alternatively download it from the Campus Virtual at (https://campusvirtual.ub.edu/mod/folder/view.php?id=4480052)
 ```
-ghget https://github.com/ppgcourseUB/ppgcourse2024/tree/main/Introduction_to_Phylogenies_Parsimony.%20MIQUEL_A_ARNEDO
+ghget https://github.com/ppgcourseUB/ppgcourse2024_week1/tree/main/Introduction_to_Phylogenies_Parsimony.MIQUEL_A_ARNEDO
 ```
 Below you will find the instruction to conduct some basic analyses using parsimony as an optimality criterion for phylogenetic inference. We have included the instructions and commands for running analyses using the terminal (Linux, MAC and windows).
 
