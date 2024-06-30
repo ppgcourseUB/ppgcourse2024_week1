@@ -15,7 +15,7 @@ You can find additional information about PartitionFinder in its web page (see a
 
 As in the other hands-on sessions, you can clone the folder with all instructions and datafiles for this practice in your user working directory (i.e., the working directory when your run a container):
 
-`ghget https://github.com/ppgcourseUB/ppgcourse2024/tree/main/Model_selection_and_partitioning_scheme_M_RIUTORT`
+`ghget https://github.com/ppgcourseUB/ppgcourse2024_week1/tree/main/Model_selection_and_partitioning_scheme_M_RIUTORT`
 
 `DATA` folder contents:
 
