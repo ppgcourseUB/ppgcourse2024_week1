@@ -22,7 +22,7 @@ All files for this hands-on class are in the folder **Bear_dataset_ML** provided
 You can download the data executing the following command from your home directory:
 
 ```
-ghget https://github.com/ppgcourseUB/ppgcourse2022/trunk/Maximum_Likelihood.Miquel_Arnedo_Gemma_Martinez_Rosa_Fernandez/Bear_dataset_ML
+ghget https://github.com/ppgcourseUB/ppgcourse2024_week1/tree/main/Maximum_Likelihood.JESUS_LOZANO
 cd Bear_dataset_ML
 ```
 
