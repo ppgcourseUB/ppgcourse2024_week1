@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# jobs to launch
+trimmomatic PE -threads 8 ./0data/reads.left.fq.gz ./0data/reads.right.fq.gz ./2trimmed_data/reads_1.P.fq.gz ./2trimmed_data/reads_1.U.fq.gz ./2trimmed_data/reads_2.P.fq.gz ./2trimmed_data/reads_2.U.fq.gz ILLUMINACLIP:./TruSeq3-PE.fa:2:30:1 LEADING:3 TRAILING:3 SLIDINGWINDOW:4:15 MINLEN:36

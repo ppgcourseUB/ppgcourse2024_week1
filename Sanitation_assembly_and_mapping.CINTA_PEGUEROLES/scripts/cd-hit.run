@@ -1,0 +1,3 @@
+#!/bin/bash
+
+cd-hit-est -i ./4trinity/Trinity.fasta -o ./5cdhit/Trinity_cdhit.fasta -c 0.9 -M 0 -T 8 > ./5cdhit/Trinity_cdhit.err

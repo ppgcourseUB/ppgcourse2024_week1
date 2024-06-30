@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# jobs to launch
+fastqc -t 8 ./0data/reads.left.fq.gz ./0data/reads.right.fq.gz -o ./1QC

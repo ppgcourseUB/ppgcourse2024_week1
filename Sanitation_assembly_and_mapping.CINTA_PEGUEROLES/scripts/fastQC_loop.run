@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# jobs to launch
+for file in ./2trimmed_data/*fq.gz;
+        do
+               fastqc -t 5 $file -o ./3QC_trimmed
+        done

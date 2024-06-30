@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# jobs to launch
+
+TransDecoder.LongOrfs -t ./4trinity/Trinity.fasta --output_dir ./7proteome/
