@@ -19,8 +19,7 @@ As mentioned in the first class, the scientific question we will try to answer t
 You can download the data executing the following command from your home directory:
 
 ```
-ghget https://github.com/ppgcourseUB/ppgcourse2024/tree/main/Sensitivity_Analysis.Rosa_Fernandez_Gemma_Martinez
-cd Bear_dataset_SensitivityAnalyses
+ghget https://github.com/ppgcourseUB/ppgcourse2024_week1/tree/main/Sensitivity_Analysis.ROSA_FERNANDEZ_GEMA_MARTINEZ
 ```
 
 Before executing the python scripts below, you must activate the specific environment for this hans-on session:
