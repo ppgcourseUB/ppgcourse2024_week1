@@ -1,0 +1,4 @@
+#!/bin/bash                                                                                                             
+
+#running orthofinder
+orthofinder -f proteomes -t 8 -a 2 -og
