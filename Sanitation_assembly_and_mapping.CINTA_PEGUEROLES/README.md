@@ -12,7 +12,7 @@ The goal of this practical session is to learn how to obtain a <em>de novo</em> 
 Remember that you can download the folder of this hands-on session within the container using `ghget`:
 
 ```
-ghget https://github.com/ppgcourseUB/ppgcourse2024/tree/main/Sanitation_assembly_and_mapping.CINTA_PEGUEROLES
+ghget https://github.com/ppgcourseUB/ppgcourse2024_week1/tree/main/Sanitation_assembly_and_mapping.CINTA_PEGUEROLES
 ```
 
 > **You must activate the environment `partitionFinder` before runing the scripts of this software**. To do this, type directly in the terminal:` conda activate trinity`
