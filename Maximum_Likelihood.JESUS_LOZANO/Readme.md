@@ -2,7 +2,7 @@
 
 **Instructors**: Jesus Lozano-Fernandez & Mattia Giacomelli
 
-If you have any questions, contact us at jesus.lozano@ub.edu or mattia.giacomelli@bristol.ac.uk
+If you have any questions, contact us at jesus.lozano@ub.edu or mattia.giacomelli@ub.edu
 
 ***
 ## Context
