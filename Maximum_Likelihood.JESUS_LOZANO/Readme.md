@@ -9,8 +9,11 @@ If you have any questions, contact us at jesus.lozano@ub.edu or mattia.giacomell
 
 We will be working with an alignment composed by 50 orthologous genes concatenated from 16 bears, 4 individuals for each of the 4 species.
 
-![data](../Sensitivity_Analysis.Rosa_Fernandez_Gemma_Martinez/img/data.PNG)
-![bear_names](../Sensitivity_Analysis.Rosa_Fernandez_Gemma_Martinez/img/bear_names.png)
+
+![data](../Maximum_Likelihood.JESUS_LOZANO/img/data.png)
+
+
+![bear_names](../Maximum_Likelihood.JESUS_LOZANO/img/bear_names.png)
 
 ***
 ## Data files
@@ -92,12 +95,6 @@ More information on the ultrafast bootstrap in: http://www.iqtree.org/doc/Tutori
 For executing the analysis run:
 
 `bash shalrt_iqtree.sh`
-
-## Bootstrap
-
-Let’s test now the differences in the bootstrap value assignment methods. We will first compare the execution time of 3 methods: ultrafast bootstrap, SH-alrt and non-parametric bootstrap.
-
-We will use the concatenated alignment of our 50 genes and use the model we obtained as the best one in the previous exercise.
 
 ### Non-parametric bootstrap
 
