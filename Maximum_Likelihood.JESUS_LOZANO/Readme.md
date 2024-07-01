@@ -60,7 +60,7 @@ You can take a look at the models in: http://www.iqtree.org/doc/Substitution-Mod
 
 ## Bootstrap
 
-Let’s test now the differences in the bootstrap value assignment methods to assess the support of nodes. We will first compare the execution time of 3 methods: ultrafast bootstrap, SH-alrt (Shimodaira-Hasegawa approximate likelihood-ratio test) and non-parametric bootstrap.
+Let’s test now the differences in the bootstrap value assignment methods to assess the support of nodes. We will first compare the execution time of 2 methods: ultrafast bootstrap  and non-parametric bootstrap.
 
 We will use the concatenated alignment of our 50 genes and use the model we obtained as the best one in the previous exercise.
 
@@ -82,19 +82,6 @@ Once modified, you are ready to run the analysis:
 
 More information on the ultrafast bootstrap in: http://www.iqtree.org/doc/Tutorial#assessing-branch-supports-with-ultrafast-bootstrap-approximation and http://www.iqtree.org/doc/Frequently-Asked-Questions#how-do-i-interpret-ultrafast-bootstrap-ufboot-support-values
 
-### SH-alrt
-
-1.- Go to the folder for SH-alrt::
-
-`cd ../shalrt`
-
-2.- Modify the **`shalrt_iqtree.sh`** script to include the best substitution model where it says **MODEL**.
-
-`iqtree -s 50_genes.fa -m MODEL -alrt 1000 -nt 8 -redo`
-
-For executing the analysis run:
-
-`bash shalrt_iqtree.sh`
 
 ### Non-parametric bootstrap
 
@@ -125,7 +112,7 @@ Once finished (this may take a while), you can check the execution time in the *
 
 Another interesting feature of IQ-TREE are the tree toplogy tests. IQ-TREE can compute the log-likelihoods of some tree topologies. In this case, we will test which of the 3 topologies of the species tree is more probable given our dataset of 50 genes. Besides just comparing the log-likelihoods of different topologies, as we are doing here, there are tests that can significantly reject certain topologies (outputing p-values), such as KH, SH and AU tests.
 
- ![topologies](../Sensitivity_Analysis.Rosa_Fernandez_Gemma_Martinez/img/topologies.png)
+ ![topologies](../Maximum_Likelihood.JESUS_LOZANO/img/topologies.png)
 
 More information here: http://www.iqtree.org/doc/Advanced-Tutorial#tree-topology-tests
 
