@@ -52,6 +52,13 @@ prank -d=median_average_identity.fa -o=median_average_identity.prank
 
 <i>Note that prank will change your output name to median_average_identity.prank.best.fas</i>
 
+Alternatively you can use a for loop to analyse all three files at the same time. See here for an example using MUSCLE but it would be the same for the two other programs
+
+```bash
+for i in $(ls *fa);do muscle -in $i -out $i.muscle.alg;done
+```
+
+
 ## Step 2
 
 Use an alignment visualization tool to check out your three alignments. This can be done in different ways, but here are some recomendations:
