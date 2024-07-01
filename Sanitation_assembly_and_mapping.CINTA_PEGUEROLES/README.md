@@ -13,6 +13,7 @@ Remember that you can download the folder of this hands-on session within the co
 
 ```
 ghget https://github.com/ppgcourseUB/ppgcourse2024_week1/tree/main/Sanitation_assembly_and_mapping.CINTA_PEGUEROLES
+cd Sanitation_assembly_and_mapping.CINTA_PEGUEROLES
 ```
 
 > **You must activate the environment `partitionFinder` before runing the scripts of this software**. To do this, type directly in the terminal:` conda activate trinity`
