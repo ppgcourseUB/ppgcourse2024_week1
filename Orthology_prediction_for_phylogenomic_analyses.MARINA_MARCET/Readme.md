@@ -6,6 +6,12 @@ The objective of this practice is to learn how to use [OrthoFinder](https://geno
 
 ***
 
+## Presentation
+
+Link to [presentation](https://docs.google.com/presentation/d/1WdXKOmBEdosnBG2rsQISL_PqcYa0B2rJpmlZ1IpvN8M/edit?usp=sharing)
+
+***
+
 ## Software description and hints
 
 For this practice we will use [OrthoFinder](https://github.com/davidemms/OrthoFinder). You can find a full description on the program in the provided link. It is important to understand that OrthoFinder is a pipeline that uses different programs and that some of the steps can be performed by different programs. For instance, the first step is an all against all homology search that can be done using either BlastP or Diamond.
