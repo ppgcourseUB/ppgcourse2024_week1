@@ -25,6 +25,10 @@ We will work with a subset of four bear proteomes. The original proteomes can be
 
 You can find the subset of proteomes we are going to use in the folder proteomes/
 
+To download the folder of this practical within the container, type.
+
+`ghget https://github.com/ppgcourseUB/ppgcourse2024_week1/tree/main/Orthology_prediction_for_phylogenomic_analyses.MARINA_MARCET`
+
 ***
 
 ## Exercise 1
