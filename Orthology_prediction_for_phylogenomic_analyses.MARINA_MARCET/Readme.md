@@ -84,7 +84,7 @@ Go to the folder and focus on the folder called *Orthogroups*. In this folder yo
 
 1.- `OrthoFinder` has few parameters, but the most important one of them is the inflation parameter. This parameter indicates whether the orthogroups are going to be smaller or bigger. By default it is set to 1.5. We are now going to run `OrthoFinder` with a bigger inflation parameter. 
 
-`orthofinder -b proteomes/OrthoFinder/Results_Jul05/ -I 3.0 -og`
+`orthofinder -b proteomes/OrthoFinder/Results_Jul03/ -I 3.0 -og`
 
 > Note that we are using `-b` instead of `-f` and we are providing previously calculated results, this will avoid having to re-calculate the all-vs-all comparison. Also we are changing the inflation parameter using `-I` and setting it to 3.0. At this point we are only interested in comparing the orthogroups, the `-og` parameter will stop the run of orthoFinder after it calculates orthogroups. This is a time-saving trick if you want to assess different inflation parameters and how they affect your orthogroups.
 
