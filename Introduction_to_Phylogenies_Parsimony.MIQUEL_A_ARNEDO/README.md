@@ -285,9 +285,16 @@ collapse 3;
 bsupport;
 ```
 
-To conduct Partition Bremer Support you can use a TNT script (pbsup.run) written by Carlos Peña and available at https://github.com/carlosp420/pbsup.run. Please refer to that GitHub site to conduct the analysis. You have all the files required to run the script available in the bears_2023_data/PBS folder  
+To conduct Partition Bremer Support:
+```
+procedure dataset.tnt-;
+```
+Read again the dataset with this specific name, it includes the same information but mtDNA and nucDNA data are in different sections
+```
+run pbsup.run 2;
+```
+It will run a TNT script (pbsup.run) written by Carlos Peña and available at https://github.com/carlosp420/pbsup.run. Please refer to that GitHub site for further information. When it ends, use the   ```ttag;``` command to visualize BS partitioned by mtDA and nucDNA data
 
- 
 ## F. Partial analyses
 
 To analyse only part of the characters use the command ```blocks```;
