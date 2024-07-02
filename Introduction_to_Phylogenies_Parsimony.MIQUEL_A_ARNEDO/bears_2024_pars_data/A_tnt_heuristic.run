@@ -1,0 +1,12 @@
+hold 1000 ;
+taxname = ;
+mult=replic 100 tbr;
+bbreak = tbr ;
+nelsen * ;
+tchoose { strict } ;
+ttags = ;
+blength *;
+ttags );
+export> consensus_tree_heuristic.tre ;
+ttags -;
+proc/;

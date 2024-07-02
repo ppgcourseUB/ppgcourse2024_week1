@@ -1,0 +1,8 @@
+ttags = ;
+resample jak replications 1000 [ mult=replic 10 tbr hold 1000 ];
+keep 1 ;
+ttags );
+ttags ;
+export - jack.tre;
+ttags-;
+proc/;

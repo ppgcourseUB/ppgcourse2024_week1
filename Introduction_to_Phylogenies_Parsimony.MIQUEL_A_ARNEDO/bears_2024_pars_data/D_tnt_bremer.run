@@ -1,0 +1,18 @@
+ttags=;
+mult 1000 =tbr h 10;
+hold 2000; sub 2 ; bbreak=tbr;
+hold 3000; sub 3 ; bbreak=tbr;
+hold 4000; sub 4 ; bbreak=tbr;
+hold 5000; sub 5 ; bbreak=tbr;
+hold 6000; sub 6 ; bbreak=tbr;
+hold 7000; sub 7 ; bbreak=tbr;
+hold 8000; sub 8 ; bbreak=tbr;
+hold 10000 sub 10 ; bbreak=tbr;
+collapse 3;
+bsupport[;
+keep 1 ;
+ttags );
+ttags ;
+export - bremer.tre;
+ttags-;
+proc/;

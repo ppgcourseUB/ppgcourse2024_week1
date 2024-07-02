@@ -1,0 +1,8 @@
+log tnt_run_log;
+mxram 2000;
+nstates dna;
+nstates NOGAPS;
+p bears_com.tnt;
+taxname = ;
+outgroup Ailuropoda_melanoleuca; 
+proc/;
