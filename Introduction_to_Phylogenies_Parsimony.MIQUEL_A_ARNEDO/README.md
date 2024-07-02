@@ -342,4 +342,4 @@ ZZ the search algorithms to use when calculating length for each partition in ea
 
 For instance, to test possible incongruence between the nuclear and the mitochondrial genes use the following command line (1000 permutations)
 
-```run ildtntk.run 3530 8043 1000 mult 15 =tbr hold 20;```
+```run ildtntk.run 3530 1000 mult 15 =tbr hold 20;```
