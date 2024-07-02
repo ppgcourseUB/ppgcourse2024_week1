@@ -285,7 +285,7 @@ collapse 3;
 bsupport;
 ```
 
-To conduct Partition Bremer Support, read again the dataset "dataset.run", which includes the same information but with mtDNA and nucDNA data are in different sections:
+To conduct Partition Bremer Support, read again the dataset "dataset.tnt", which includes the same information but with mtDNA and nucDNA data in different sections:
 ```
 procedure dataset.tnt;
 ```
@@ -294,7 +294,7 @@ The run a TNT script (pbsup.run) written by Carlos Peña and available at https:
 ```
 run pbsup.run 2;
 ```
-When it ends, use the   ```ttag;``` command to visualize BS partitioned by mtDA and nucDNA data
+The "2" refers to the number of partitions in the dataset.tnt data matrix. When it ends, use the ```ttag;``` command to visualize BS partitioned by mtDNA and nucDNA data
 
 ## F. Partial analyses
 
