@@ -32,21 +32,18 @@ You can find the subset of proteomes we are going to use in the folder proteomes
 We will run `OrthoFinder` with the provided dataset and default values. To make sure it works quickly we
 provided only a subset of the data.
 
-1.- To execute `OrthoFinder`, execute the script *launch_orthofinder.run*. 
-Here you can see the contents of the script *launch_orthofinder.run*:
 
-```bash
-#!/bin/bash                                                                                                                                                            
-
-#running orthofinder
-orthofinder -f proteomes -og -t 8 -a 2
-```
-
-> The flag -f indicates the folder where the proteomes are found. The -og option will tell `OrthoFinder` to stop after inferring the orthogroups. You can adapt the program for multi-threading using the -t and -a options.
-
-2.- While the program works, lets have a look to the options that `OrthoFinder` has. Type `orthofinder -h`
+1.- First of all, lets check which option Orthofinder has. Open your terminal, initiate docker, and type `orthofinder -h`
 
 > Note that one of the options is `-S` which determines how the homology search will be done. `Diamond` is very fast, much faster than `Blast`, but is less sensitive when running with distantly related species. Consider this when running `OrthoFinder`.
+
+2.- To execute `OrthoFinder`, run this command. 
+
+```bash                                                                                                                       
+orthofinder -f proteomes -og -t 4 -a 2
+```
+
+> The flag -f indicates the folder where the proteomes are found. The -og option will tell `OrthoFinder` to stop after inferring the orthogroups. You can adapt the program for multi-threading using the -t and -a options, depending on your computer you may need to adjust these values.
 
 3.- Once `OrthoFinder` has finished, you will find that in the folder proteomes there will be a new folder called OrthoFinder and within it will be a file called Results_Jul03. The results of `OrthoFinder` can be found there sorted in different folders. New runs of `OrthoFinder` will generate new folders called Results_Jul03_1, Results_Jul03_2, ... 
 
@@ -74,8 +71,6 @@ Go to the folder and focus on the folder called *Orthogroups*. In this folder yo
 
 1.- `OrthoFinder` has few parameters, but the most important one of them is the inflation parameter. This parameter indicates whether the orthogroups are going to be smaller or bigger. By default it is set to 1.5. We are now going to run `OrthoFinder` with a bigger inflation parameter. 
 
-Replace the running line in the script *launch_orthofinder.run* with:
-
 `orthofinder -b proteomes/OrthoFinder/Results_Jul05/ -I 3.0 -og`
 
 > Note that we are using `-b` instead of `-f` and we are providing previously calculated results, this will avoid having to re-calculate the all-vs-all comparison. Also we are changing the inflation parameter using `-I` and setting it to 3.0. At this point we are only interested in comparing the orthogroups, the `-og` parameter will stop the run of orthoFinder after it calculates orthogroups. This is a time-saving trick if you want to assess different inflation parameters and how they affect your orthogroups.
@@ -98,31 +93,27 @@ This will generate a second folder which will be called *Results_Jul03_1* where 
 
 ## Exercise 3
 
-Orthogroups can contain duplications which means we can have a mix of orthologs and paralogs. `OrthoFinder` implements a method to distinguish between them. This time we will ask `OrthoFinder` to start from the orthogroups and to finish the process till the end.
+Orthogroups can contain duplications which means we can have a mix of orthologs and paralogs. `OrthoFinder` implements a method to distinguish between them. This time we will ask `OrthoFinder` to start from the orthogroups and to finish the process till the end. 
 
-Replace the running line in the script *launch_orthofinder.run* with:
-
-`orthofinder -fg proteomes/OrthoFinder/Results_Jul05/`
+`orthofinder -fg proteomes/OrthoFinder/Results_Jul03/`
 
 > In this case the -fg option is telling `OrthoFinder` to use the orthogroups previously calculated to run the analaysis for orthology
 
 Now, to correctly predict orthologous relationships a species tree is needed as reference. `OrthoFinder` tries to calculate the species tree on its own but you should always make sure the tree it has inferred is correct and rooted properly. Go to the results folder (proteomes/OrthoFinder/Results_Jul03_3) where you should see a folder called *Species_tree* and in there is a file called *SpeciesTree_rooted.txt*
 
-1.- Check the species tree that has been automatically build by `OrthoFinder`. You can download the file to your personal computer and use `phylo.io` (https://beta.phylo.io/viewer/) to visualize the tree:
+1.- Check the species tree that has been automatically build by `OrthoFinder`. You can do a cat of the file, copy the newick string and use `phylo.io` (https://beta.phylo.io/viewer/) to visualize the tree:
 
 ```diff
 - Based on your knowledge on how bears have evolved, is the tree correct?
 ```
 
-2.- If the tree is not rooted correctly, re-root the tree by clicking on the branch and pressing on re-root (make sure you press on the branch and not on the species name!). Now export the newick (find the button download on the upper right part of the image, press on Export as text and save the file). Save the file into your folder and run orthofinder again with the option -s speciesTree_file.
-
-Replace the running line in the script *launch_orthofinder.run* with:
+2.- If the tree is not rooted correctly, re-root the tree by clicking on the branch and pressing on re-root (make sure you press on the branch and not on the species name!). Now export the newick (find the button download on the upper right part of the image, press on Export as text and save the file). If you have a shared folder with docker, save the file there. If you don't, open the file, copy the newick string, open a new text file within the docker and copy the newick to that file. Once you have your species tree in the docker, re-run orthofinder with the following command:
 
 `orthofinder -fg proteomes/OrthoFinder/Results_Jul03/ -s speciesTree_file`
 
 > Note that if you have a species tree before running `OrthoFinder` it is more convenient to just provide it from the start using the `-s` option. Just make sure that the name of the proteome files are the same as the ones found in the species tree. 
 
-> Other things that will affect the prediction of orthologs is how the gene trees are build. By default orthoFinder uses distance matrices and fastME to build the gene trees. This, while fast, can give faulty gene trees when dealing with more complex datasets. Once you are sure that your species tree is correct and that you are satisfied with the orthogroups, it is recommended that you do the orthology prediction using multiple sequence alignments (`mafft` is implemented in `OrthoFinder`) and make the gene trees using `IQ-TREE` (also implemented in `OrthoFinder`). Due to time constraints we are not going to run these, but you can find the pre-calculated results in the results folder.
+> Other things that will affect the prediction of orthologs is how the gene trees are build. By default orthoFinder uses distance matrices and fastME to build the gene trees. This, while fast, can give faulty gene trees when dealing with more complex datasets. Once you are sure that your species tree is correct and that you are satisfied with the orthogroups, it is recommended that you do the orthology prediction using multiple sequence alignments (`mafft` is implemented in `OrthoFinder`) and make the gene trees using `IQ-TREE` (also implemented in `OrthoFinder`). Due to time constraints we are not going to run these.
 
 ## Exercise 4
 
@@ -150,12 +141,3 @@ We are now going to play a bit with the data we have generated in the different 
 - 2.5.- Most of the duplications observed in the previous exercise were ancient, why do you think orthoFinder did not separate them? Were they separated in the analysis run with -I 3.0? If they were, and looking again to the gene tree, did the split make sense?
 ```
 
-3.- Go to the results folder we downloaded, and uncompress the results for the datasets withTrees, withTrees_MSA and withTree_iqtree. To uncompress you can use this command:
-
-`tar -zxvf results/Results_withTrees_MSA.tar.gz`
-
-```diff
-- 3.1.- For the three methods of building trees, check whether the orthologs of A0A7N5K5T5_AILME are consistent across runs
-
-- 3.2.- Check the gene trees that contain this sequence in each run (remember you can use [phylo.io](https://beta.phylo.io/viewer/) to visualize trees. The compare option is very useful in this case). Can you find a good reason as to why orthology predictions changed?
-```
