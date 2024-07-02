@@ -6,6 +6,12 @@ The objective of this practice is to explore different multiple sequence alignme
 
 ***
 
+## Link to Presentation
+
+[Presentation](https://docs.google.com/presentation/d/1HmnqLNyCuM_ZkzaTzt67rIOs75Ww2qw9jlJAAh18Lkc/edit?usp=sharing)
+
+***
+
 ## Software description and hints
 
 For this practice we will use three different alignment programs: [MUSCLE](https://www.drive5.com/muscle/), [MAFFT](https://www.ebi.ac.uk/jdispatcher/msa/mafft) and [PRANK](http://wasabiapp.org/software/prank/). 
