@@ -8,7 +8,7 @@
 
 To execute the program within the container, type:
 
-`/software/TNT/TNT-bin/tnt`
+`./software/TNT/TNT-bin/tnt`
 
 **OTHER PROGRAMS:** 
 + <ins>**Mesquite:</ins>** Matrix and tree manipulation - http://www.mesquiteproject.org/Installation.html
