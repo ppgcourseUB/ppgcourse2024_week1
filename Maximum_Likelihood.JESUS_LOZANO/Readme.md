@@ -126,7 +126,7 @@ Go to the folder:
 
 `cd ../topology_test_model`
 
-Modify the **`topology_test_model.sh`** script to include the best substitution model where it says **MODEL**. You can use any command-line tool you know (such as emacs or vim) or any text editor.
+Modify the **`topology_test_model.sh`** script to include the best substitution model where it says **MODEL**. You can use any command-line tool you know or any text editor.
 
 `iqtree -s 50_genes.fa -z ../bear_species_trees_topologies.tre -m MODEL -redo`
 
