@@ -1,0 +1,305 @@
+IQ-TREE multicore version 2.3.4 COVID-edition for Linux x86 64-bit built Jun 18 2024
+Developed by Bui Quang Minh, James Barbetti, Nguyen Lam Tung, Olga Chernomor,
+Heiko Schmidt, Dominik Schrempf, Michael Woodhams, Ly Trong Nhan, Thomas Wong
+
+Host:    ab3501280c72 (SSE4.2, 7 GB RAM)
+Command: iqtree -s 50_genes.fa -m MF -mset LG+F+G,WAG+F+G,JTT+F+G -madd LG+C20+F+G,LG+C10+F+G,LG4X --score-diff all -nt 8 -redo
+Seed:    897979 (Using SPRNG - Scalable Parallel Random Number Generator)
+Time:    Wed Jul  3 09:22:41 2024
+Kernel:  SSE2 - 8 threads (12 CPU cores detected)
+
+Reading alignment file 50_genes.fa ... Fasta format detected
+Reading fasta file: done in 0.00439563 secs using 99.89% CPU
+Alignment most likely contains protein sequences
+Alignment has 8 sequences with 11259 columns, 4730 distinct patterns
+2339 parsimony-informative, 2142 singleton sites, 6777 constant sites
+                         Gap/Ambiguity  Composition  p-value
+Analyzing sequences: done in 0.000494916 secs using 346.5% CPU
+   1  UrsusArctos_Margo         44.62%    passed     95.57%
+   2  UrsusArctos_Adelaide       2.19%    passed     99.93%
+   3  UrsusAmericanus_Noah      18.63%    passed     87.22%
+   4  UrsusAmericanus_Montana   14.56%    passed     82.20%
+   5  UrsusMaritimus_Maria       6.89%    passed    100.00%
+   6  UrsusMaritimus_Maripepa    4.72%    passed     87.67%
+   7  Ailuropoda_Siro            7.25%    passed     97.05%
+   8  Ailuropoda_Pepe           17.45%    passed     98.49%
+****  TOTAL                     14.54%  0 sequences failed composition chi2 test (p-value<5%; df=19)
+
+
+Create initial parsimony tree by phylogenetic likelihood library (PLL)... 0.004 seconds
+Perform fast likelihood tree search using LG+I+G model...
+Estimate model parameters (epsilon = 5.000)
+Perform nearest neighbor interchange...
+Estimate model parameters (epsilon = 1.000)
+1. Initial log-likelihood: -79571.941
+Optimal log-likelihood: -79571.936
+Proportion of invariable sites: 0.303
+Gamma shape alpha: 0.733
+Parameters optimization took 1 rounds (0.068 sec)
+Time for fast ML tree search: 0.354 seconds
+
+NOTE: ModelFinder requires 58 MB RAM!
+ModelFinder will test up to 135 protein models (sample size: 11259) ...
+ No. Model         -LnL         df  AIC          AICc         BIC
+  1  LG+F+G4       79571.333    33  159208.665   159208.865   159450.520
+  2  LG+F+I+G4     79543.368    34  159154.737   159154.949   159403.920
+  3  LG+F+G4       79571.333    33  159208.665   159208.865   159450.520
+  4  LG+F+I+G4     79543.368    34  159154.737   159154.949   159403.920
+WARNING: Both Gamma and FreeRate models were specified, continue with FreeRate model
+  5  LG+F+R2       79615.310    34  159298.621   159298.833   159547.804
+WARNING: Both Gamma and FreeRate models were specified, continue with FreeRate model
+  6  LG+F+R3       79520.115    36  159112.230   159112.467   159376.071
+WARNING: Both Gamma and FreeRate models were specified, continue with FreeRate model
+  7  LG+F+R4       79518.237    38  159112.475   159112.739   159390.974
+WARNING: Both Gamma and FreeRate models were specified, continue with FreeRate model
+ 14  LG+F+I+R2     79521.027    35  159112.054   159112.278   159368.566
+WARNING: Both Gamma and FreeRate models were specified, continue with FreeRate model
+ 15  LG+F+I+R3     79518.049    37  159110.098   159110.349   159381.269
+ 23  LG+F+G4       79571.333    33  159208.665   159208.865   159450.520
+ 24  LG+F+I+G4     79543.368    34  159154.737   159154.949   159403.920
+ 25  LG+F+G4       79571.333    33  159208.665   159208.865   159450.520
+ 26  LG+F+I+G4     79543.368    34  159154.737   159154.949   159403.920
+WARNING: Both Gamma and FreeRate models were specified, continue with FreeRate model
+ 27  LG+F+R2       79615.310    34  159298.621   159298.833   159547.804
+WARNING: Both Gamma and FreeRate models were specified, continue with FreeRate model
+ 28  LG+F+R3       79520.115    36  159112.230   159112.467   159376.071
+WARNING: Both Gamma and FreeRate models were specified, continue with FreeRate model
+ 29  LG+F+R4       79518.237    38  159112.475   159112.739   159390.974
+WARNING: Both Gamma and FreeRate models were specified, continue with FreeRate model
+ 36  LG+F+I+R2     79521.027    35  159112.054   159112.278   159368.566
+WARNING: Both Gamma and FreeRate models were specified, continue with FreeRate model
+ 37  LG+F+I+R3     79518.049    37  159110.098   159110.349   159381.269
+ 45  WAG+F+G4      79948.758    33  159963.515   159963.715   160205.370
+ 46  WAG+F+I+G4    79929.268    34  159926.535   159926.747   160175.719
+ 47  WAG+F+G4      79948.758    33  159963.515   159963.715   160205.370
+ 48  WAG+F+I+G4    79929.268    34  159926.535   159926.747   160175.719
+WARNING: Both Gamma and FreeRate models were specified, continue with FreeRate model
+ 49  WAG+F+R2      79981.428    34  160030.856   160031.068   160280.039
+WARNING: Both Gamma and FreeRate models were specified, continue with FreeRate model
+ 50  WAG+F+R3      79917.681    36  159907.362   159907.599   160171.203
+WARNING: Both Gamma and FreeRate models were specified, continue with FreeRate model
+ 51  WAG+F+R4      79917.151    38  159910.302   159910.566   160188.801
+WARNING: Both Gamma and FreeRate models were specified, continue with FreeRate model
+ 58  WAG+F+I+R2    79918.115    35  159906.230   159906.454   160162.742
+WARNING: Both Gamma and FreeRate models were specified, continue with FreeRate model
+ 59  WAG+F+I+R3    79917.241    37  159908.482   159908.732   160179.652
+ 67  WAG+F+G4      79948.758    33  159963.515   159963.715   160205.370
+ 68  WAG+F+I+G4    79929.268    34  159926.535   159926.747   160175.719
+ 69  WAG+F+G4      79948.758    33  159963.515   159963.715   160205.370
+ 70  WAG+F+I+G4    79929.268    34  159926.535   159926.747   160175.719
+WARNING: Both Gamma and FreeRate models were specified, continue with FreeRate model
+ 71  WAG+F+R2      79981.428    34  160030.856   160031.068   160280.039
+WARNING: Both Gamma and FreeRate models were specified, continue with FreeRate model
+ 72  WAG+F+R3      79917.681    36  159907.362   159907.599   160171.203
+WARNING: Both Gamma and FreeRate models were specified, continue with FreeRate model
+ 73  WAG+F+R4      79917.151    38  159910.302   159910.566   160188.801
+WARNING: Both Gamma and FreeRate models were specified, continue with FreeRate model
+ 80  WAG+F+I+R2    79918.115    35  159906.230   159906.454   160162.742
+WARNING: Both Gamma and FreeRate models were specified, continue with FreeRate model
+ 81  WAG+F+I+R3    79917.241    37  159908.482   159908.732   160179.652
+ 89  JTT+F+G4      79908.109    33  159882.219   159882.419   160124.073
+ 90  JTT+F+I+G4    79880.373    34  159828.746   159828.958   160077.930
+ 91  JTT+F+G4      79908.109    33  159882.219   159882.419   160124.073
+ 92  JTT+F+I+G4    79880.373    34  159828.746   159828.958   160077.930
+WARNING: Both Gamma and FreeRate models were specified, continue with FreeRate model
+ 93  JTT+F+R2      79948.647    34  159965.294   159965.506   160214.478
+WARNING: Both Gamma and FreeRate models were specified, continue with FreeRate model
+ 94  JTT+F+R3      79858.483    36  159788.965   159789.203   160052.807
+WARNING: Both Gamma and FreeRate models were specified, continue with FreeRate model
+ 95  JTT+F+R4      79856.099    38  159788.199   159788.463   160066.698
+WARNING: Both Gamma and FreeRate models were specified, continue with FreeRate model
+102  JTT+F+I+R2    79859.462    35  159788.925   159789.149   160045.437
+WARNING: Both Gamma and FreeRate models were specified, continue with FreeRate model
+103  JTT+F+I+R3    79855.936    37  159785.872   159786.123   160057.043
+111  JTT+F+G4      79908.109    33  159882.219   159882.419   160124.073
+112  JTT+F+I+G4    79880.373    34  159828.746   159828.958   160077.930
+113  JTT+F+G4      79908.109    33  159882.219   159882.419   160124.073
+114  JTT+F+I+G4    79880.373    34  159828.746   159828.958   160077.930
+WARNING: Both Gamma and FreeRate models were specified, continue with FreeRate model
+115  JTT+F+R2      79948.647    34  159965.294   159965.506   160214.478
+WARNING: Both Gamma and FreeRate models were specified, continue with FreeRate model
+116  JTT+F+R3      79858.483    36  159788.965   159789.203   160052.807
+WARNING: Both Gamma and FreeRate models were specified, continue with FreeRate model
+117  JTT+F+R4      79856.099    38  159788.199   159788.463   160066.698
+WARNING: Both Gamma and FreeRate models were specified, continue with FreeRate model
+124  JTT+F+I+R2    79859.462    35  159788.925   159789.149   160045.437
+WARNING: Both Gamma and FreeRate models were specified, continue with FreeRate model
+125  JTT+F+I+R3    79855.936    37  159785.872   159786.123   160057.043
+Model LG+C20+F+G is alias for LG+POISSON+G+FMIX{C20pi1:1:0.0559910600,C20pi2:1:0.0514824870,C20pi3:1:0.0812922124,C20pi4:1:0.0721976867,C20pi5:1:0.0556718858,C20pi6:1:0.0331003080,C20pi7:1:0.0589501763,C20pi8:1:0.0263756889,C20pi9:1:0.0307584220,C20pi10:1:0.0376701125,C20pi11:1:0.0303058290,C20pi12:1:0.0808775576,C20pi13:1:0.0263349134,C20pi14:1:0.0579101455,C20pi15:1:0.0371248064,C20pi16:1:0.0586867766,C20pi17:1:0.0561479138,C20pi18:1:0.0349810886,C20pi19:1:0.0544937394,C20pi20:1:0.0596471901}+F+G
+133  LG+C20+F+G    79276.326    53  158658.652   158659.162   159047.084
+Model LG+C10+F+G is alias for LG+POISSON+G+FMIX{C10pi1:1:0.1191344178,C10pi2:1:0.0874372456,C10pi3:1:0.1037105070,C10pi4:1:0.0922584809,C10pi5:1:0.1070492801,C10pi6:1:0.1329945166,C10pi7:1:0.0538028458,C10pi8:1:0.0691986212,C10pi9:1:0.1319937434,C10pi10:1:0.1024203429}+F+G
+134  LG+C10+F+G    79384.946    43  158855.892   158856.229   159171.035
+Model LG4X is alias for MIX{LG4X1,LG4X2,LG4X3,LG4X4}*R4
+135  LG4X          79900.726    19  159839.452   159839.520   159978.702
+Akaike Information Criterion:           LG+C20+F+G
+Corrected Akaike Information Criterion: LG+C20+F+G
+Bayesian Information Criterion:         LG+C20+F+G
+Best-fit model: LG+C20+F+G chosen according to BIC
+
+All model information printed to 50_genes.fa.model.gz
+CPU time for ModelFinder: 1045.017 seconds (0h:17m:25s)
+Wall-clock time for ModelFinder: 145.422 seconds (0h:2m:25s)
+Model LG+C20+F+G is alias for LG+POISSON+G+FMIX{C20pi1:1:0.0559910600,C20pi2:1:0.0514824870,C20pi3:1:0.0812922124,C20pi4:1:0.0721976867,C20pi5:1:0.0556718858,C20pi6:1:0.0331003080,C20pi7:1:0.0589501763,C20pi8:1:0.0263756889,C20pi9:1:0.0307584220,C20pi10:1:0.0376701125,C20pi11:1:0.0303058290,C20pi12:1:0.0808775576,C20pi13:1:0.0263349134,C20pi14:1:0.0579101455,C20pi15:1:0.0371248064,C20pi16:1:0.0586867766,C20pi17:1:0.0561479138,C20pi18:1:0.0349810886,C20pi19:1:0.0544937394,C20pi20:1:0.0596471901}+F+G
+
+NOTE: 493 MB RAM (0 GB) is required!
+Estimate model parameters (epsilon = 0.010)
+1. Initial log-likelihood: -79276.326
+2. Current log-likelihood: -79276.213
+3. Current log-likelihood: -79276.118
+4. Current log-likelihood: -79276.009
+5. Current log-likelihood: -79275.921
+6. Current log-likelihood: -79275.813
+7. Current log-likelihood: -79275.730
+8. Current log-likelihood: -79275.624
+9. Current log-likelihood: -79275.544
+10. Current log-likelihood: -79275.441
+11. Current log-likelihood: -79275.366
+12. Current log-likelihood: -79275.264
+13. Current log-likelihood: -79275.194
+14. Current log-likelihood: -79275.092
+15. Current log-likelihood: -79275.026
+16. Current log-likelihood: -79274.926
+17. Current log-likelihood: -79274.865
+18. Current log-likelihood: -79274.763
+19. Current log-likelihood: -79274.707
+20. Current log-likelihood: -79274.605
+21. Current log-likelihood: -79274.554
+22. Current log-likelihood: -79274.452
+23. Current log-likelihood: -79274.333
+24. Current log-likelihood: -79274.286
+25. Current log-likelihood: -79274.227
+26. Current log-likelihood: -79274.184
+27. Current log-likelihood: -79274.148
+28. Current log-likelihood: -79274.112
+29. Current log-likelihood: -79274.065
+30. Current log-likelihood: -79274.014
+31. Current log-likelihood: -79273.976
+32. Current log-likelihood: -79273.941
+33. Current log-likelihood: -79273.897
+34. Current log-likelihood: -79273.846
+35. Current log-likelihood: -79273.810
+36. Current log-likelihood: -79273.776
+37. Current log-likelihood: -79273.733
+38. Current log-likelihood: -79273.682
+39. Current log-likelihood: -79273.647
+40. Current log-likelihood: -79273.615
+41. Current log-likelihood: -79273.572
+42. Current log-likelihood: -79273.521
+43. Current log-likelihood: -79273.487
+44. Current log-likelihood: -79273.456
+45. Current log-likelihood: -79273.415
+46. Current log-likelihood: -79273.362
+47. Current log-likelihood: -79273.329
+48. Current log-likelihood: -79273.299
+49. Current log-likelihood: -79273.259
+50. Current log-likelihood: -79273.204
+51. Current log-likelihood: -79273.167
+52. Current log-likelihood: -79273.139
+53. Current log-likelihood: -79273.111
+54. Current log-likelihood: -79273.070
+55. Current log-likelihood: -79273.004
+56. Current log-likelihood: -79272.969
+57. Current log-likelihood: -79272.941
+58. Current log-likelihood: -79272.916
+59. Current log-likelihood: -79272.876
+60. Current log-likelihood: -79272.852
+61. Current log-likelihood: -79272.810
+62. Current log-likelihood: -79272.798
+63. Current log-likelihood: -79272.754
+64. Current log-likelihood: -79272.732
+65. Current log-likelihood: -79272.710
+66. Current log-likelihood: -79272.689
+67. Current log-likelihood: -79272.667
+68. Current log-likelihood: -79272.646
+69. Current log-likelihood: -79272.623
+70. Current log-likelihood: -79272.601
+71. Current log-likelihood: -79272.579
+72. Current log-likelihood: -79272.557
+73. Current log-likelihood: -79272.536
+74. Current log-likelihood: -79272.512
+75. Current log-likelihood: -79272.493
+76. Current log-likelihood: -79272.472
+77. Current log-likelihood: -79272.448
+78. Current log-likelihood: -79272.429
+79. Current log-likelihood: -79272.407
+80. Current log-likelihood: -79272.385
+81. Current log-likelihood: -79272.362
+82. Current log-likelihood: -79272.340
+83. Current log-likelihood: -79272.317
+84. Current log-likelihood: -79272.298
+85. Current log-likelihood: -79272.277
+86. Current log-likelihood: -79272.265
+87. Current log-likelihood: -79272.225
+88. Current log-likelihood: -79272.205
+89. Current log-likelihood: -79272.182
+90. Current log-likelihood: -79272.160
+91. Current log-likelihood: -79272.138
+92. Current log-likelihood: -79272.114
+93. Current log-likelihood: -79272.096
+94. Current log-likelihood: -79272.076
+95. Current log-likelihood: -79272.054
+96. Current log-likelihood: -79272.031
+97. Current log-likelihood: -79272.008
+98. Current log-likelihood: -79271.986
+99. Current log-likelihood: -79271.962
+100. Current log-likelihood: -79271.940
+101. Current log-likelihood: -79271.916
+102. Current log-likelihood: -79271.895
+103. Current log-likelihood: -79271.870
+104. Current log-likelihood: -79271.853
+105. Current log-likelihood: -79271.835
+106. Current log-likelihood: -79271.817
+107. Current log-likelihood: -79271.798
+108. Current log-likelihood: -79271.777
+109. Current log-likelihood: -79271.755
+110. Current log-likelihood: -79271.731
+111. Current log-likelihood: -79271.710
+112. Current log-likelihood: -79271.688
+113. Current log-likelihood: -79271.664
+114. Current log-likelihood: -79271.644
+115. Current log-likelihood: -79271.623
+116. Current log-likelihood: -79271.602
+117. Current log-likelihood: -79271.580
+118. Current log-likelihood: -79271.557
+119. Current log-likelihood: -79271.534
+120. Current log-likelihood: -79271.512
+121. Current log-likelihood: -79271.489
+122. Current log-likelihood: -79271.468
+123. Current log-likelihood: -79271.446
+124. Current log-likelihood: -79271.426
+125. Current log-likelihood: -79271.407
+126. Current log-likelihood: -79271.389
+127. Current log-likelihood: -79271.372
+128. Current log-likelihood: -79271.357
+129. Current log-likelihood: -79271.343
+130. Current log-likelihood: -79271.331
+131. Current log-likelihood: -79271.321
+132. Current log-likelihood: -79271.309
+133. Current log-likelihood: -79271.279
+134. Current log-likelihood: -79271.229
+135. Current log-likelihood: -79271.217
+136. Current log-likelihood: -79271.163
+137. Current log-likelihood: -79271.139
+138. Current log-likelihood: -79271.125
+139. Current log-likelihood: -79271.114
+Optimal log-likelihood: -79271.106
+Mixture weights: 0.579 0.027 0.009 0.024 0.057 0.019 0.000 0.021 0.034 0.003 0.019 0.000 0.034 0.024 0.027 0.013 0.013 0.034 0.009 0.000 0.052
+Gamma shape alpha: 0.314
+Parameters optimization took 139 rounds (126.972 sec)
+WARNING: The mixture model might be overfitting because some mixture weights are estimated close to zero
+Wrote distance file to... 
+BEST SCORE FOUND : -79271.106
+Total tree length: 1.452
+
+Total number of iterations: 0
+CPU time used for tree search: 0.000 sec (0h:0m:0s)
+Wall-clock time used for tree search: 0.000 sec (0h:0m:0s)
+Total CPU time used: 1976.301 sec (0h:32m:56s)
+Total wall-clock time used: 272.413 sec (0h:4m:32s)
+
+Analysis results written to: 
+  IQ-TREE report:                50_genes.fa.iqtree
+  Tree used for ModelFinder:     50_genes.fa.treefile
+  Screen log file:               50_genes.fa.log
+
+Date and Time: Wed Jul  3 09:27:14 2024
