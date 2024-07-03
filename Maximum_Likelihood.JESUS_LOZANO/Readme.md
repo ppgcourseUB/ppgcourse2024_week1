@@ -20,7 +20,7 @@ We will be working with an alignment composed by 50 orthologous genes concatenat
 
 For Maximum likelihood tree reconstruction, we will use the software IQ-TREE which is already installed in the Docker.
 
-All files for this hands-on class are in the folder **Bear_dataset_ML** provided in the github repository. We will use a separate folder for each analysis to avoid overwritting any files. All the folders already contain the results (output files), but we will overwrite them en each of the analyses. If you are interested in comparing with your resutls, you can download again from the GitHub.
+All files for this hands-on class are in the folder **Bear_dataset_ML** provided in the github repository. We will use a separate folder for each analysis. All the folders already contain the results (output files), but we will overwrite them in the new analyses you will perform. If you are interested in comparing them with your results, you can download the folder again from the GitHub.
 
 You can download the data executing the following command from your home directory:
 
