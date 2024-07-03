@@ -110,7 +110,7 @@ Once finished (this may take a while), you can check the execution time in the *
 
 ## Topology test
 
-Another interesting feature of IQ-TREE are the tree toplogy tests. IQ-TREE can compute the log-likelihoods of some tree topologies. In this case, we will test which of the 3 topologies of the species tree is more probable given our dataset of 50 genes. Besides just comparing the log-likelihoods of different topologies, as we are doing here, there are tests that can significantly reject certain topologies (outputing p-values), such as KH, SH and AU tests.
+Another interesting feature of IQ-TREE are the tree toplogy tests. IQ-TREE can compute the log-likelihoods of some tree topologies. In this case, we will test which of the 3 topologies of the species tree is more probable given our dataset of 50 genes. Besides just comparing the log-likelihoods of different topologies, we will also test if we can significantly reject certain topologies (outputing p-values), such as KH, SH and AU tests.
 
  ![topologies](../Maximum_Likelihood.JESUS_LOZANO/img/topologies.png)
 
@@ -118,7 +118,7 @@ More information here: http://www.iqtree.org/doc/Advanced-Tutorial#tree-topology
 
 IQ-TREE first reconstructs a ML tree and then computes the log-likelihood of the tree topologies based on the estimated parameters for the ML tree.
 
-Parameters for the ML tree can be estimated in 3 different ways, that we will compare.
+Parameters for the ML tree can be estimated in different ways, we will use 2 and we will compare them.
 
 1.- First, let’s IQ-TREE reconstruct the tree **given the best model estimated before**.
 
@@ -134,21 +134,7 @@ For executing the analysis run:
 
 `bash topology_test_model.sh`
 
-2.- Then, let’s IQ-TREE estimate the parameters from an **initial parsimony tree**.
-
-Go to the folder:
-
-`cd ../topology_test_parsimony`
-
-If you look at the **`topology_test_parsimony.sh`** file you can see the command you are executing.
-
-`iqtree -s 50_genes.fa -z ../bear_species_trees_topologies.tre -n 0 -redo`
-
-For executing the analysis run:
-
-`bash topology_test_parsimony.sh`
-
-3.- Last, instead of estimating the parameters from a parsimony tree, let’s based the estimation on a **tree that we have reconstructed before**.
+2.- In here, we will base the estimation on a **tree that we have reconstructed before**.
 
 Go to the folder:
 
