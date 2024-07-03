@@ -30,6 +30,10 @@ Finally, there is a TNT wiki (http://tnt.insectmuseum.org) where you can find ad
 
 We will investigate the phylogenetic relationships of bears—Family [Ursidae](http://tolweb.org/Ursidae/16015) by using a concatenated matrix of 6 mtDNA genes, namely cox1, cytb, nad1, nad5, 16S and 12S and and 5 nuclear genes, MC$R, RNASE1, CHRNA1, FES, IRBP, obtained from Genbank.
 
+![data](../Maximum_Likelihood.JESUS_LOZANO/img/data.png)
+
+
+
 TNT uses it own format. Supposedly, also accepts NEXUS format, although it is a little bit picky! (e.g. use the simple NEXUS format in Mesquite). Having the sequences in fasta format as well will help you to recode the gaps as absence/presence characters (with Seqedit).
 
 You can download the dataset in different formats using the following instructions (alternatively download it from the Campus Virtual at (https://campusvirtual.ub.edu/mod/folder/view.php?id=4480052)
