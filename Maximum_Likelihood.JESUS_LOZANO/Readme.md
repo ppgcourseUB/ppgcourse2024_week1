@@ -26,7 +26,7 @@ You can download the data executing the following command from your home directo
 
 ```
 ghget https://github.com/ppgcourseUB/ppgcourse2024_week1/tree/main/Maximum_Likelihood.JESUS_LOZANO
-cd Bear_dataset_ML
+cd Maximum_Likelihood.JESUS_LOZANO/Bear_dataset_ML
 ```
 
 ***
