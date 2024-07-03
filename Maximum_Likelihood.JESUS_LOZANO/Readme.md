@@ -33,7 +33,7 @@ cd Maximum_Likelihood.JESUS_LOZANO/Bear_dataset_ML
 
 ## Model selection
 
-First, we will find which is the best substitution model for our data using the model selection option from IQ-TREE. 
+First, we will find which is the best substitution model for our data using the model selection option from IQ-TREE. We will use a concatenated alignment of 50 genes belonging to those individuals.
 
 1.- From the `Bear_dataset_ML` folder, go to the folder for model selection:
 
@@ -60,9 +60,9 @@ You can take a look at the models in: http://www.iqtree.org/doc/Substitution-Mod
 
 ## Bootstrap
 
-Let’s test now the differences in the bootstrap value assignment methods to assess the support of nodes. We will first compare the execution time of 2 methods: ultrafast bootstrap  and non-parametric bootstrap.
+Let’s test now the differences in the bootstrap value assignment methods to assess the support of nodes. We will first compare the execution time of 2 methods: ultrafast bootstrap and non-parametric bootstrap.
 
-We will use the concatenated alignment of our 50 genes and use the model we obtained as the best one in the previous exercise.
+We will use the concatenated alignment and the model obtained as the best fitting from the previous exercise.
 
 ### Ultrafast bootstrap
 
