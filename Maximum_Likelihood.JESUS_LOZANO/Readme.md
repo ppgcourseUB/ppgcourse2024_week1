@@ -31,7 +31,7 @@ cd Maximum_Likelihood.JESUS_LOZANO/Bear_dataset_ML
 
 ***
 
-## Model selection
+# Model selection
 
 First, we will find which is the best substitution model for our data using the model selection option from IQ-TREE. We will use a concatenated alignment of 50 genes belonging to those individuals.
 
@@ -58,7 +58,7 @@ You can take a look at the models in: http://www.iqtree.org/doc/Substitution-Mod
 
 ***
 
-## Bootstrap
+# Bootstrap
 
 Let’s test now the differences in the bootstrap value assignment methods to assess the support of nodes. We will first compare the execution time of 2 methods: ultrafast bootstrap and non-parametric bootstrap.
 
@@ -108,7 +108,7 @@ Once finished (this may take a while), you can check the execution time in the *
 
 ***
 
-## Topology test
+# Topology test
 
 Another interesting feature of IQ-TREE are the tree toplogy tests. IQ-TREE can compute the log-likelihoods of some tree topologies. In this case, we will test which of the 3 topologies of the species tree is more probable given our dataset of 50 genes. Besides just comparing the log-likelihoods of different topologies, we will also test if we can significantly reject certain topologies (outputing p-values), such as KH, SH and AU tests.
 
