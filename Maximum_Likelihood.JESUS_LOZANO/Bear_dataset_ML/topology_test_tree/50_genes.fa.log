@@ -1,0 +1,85 @@
+IQ-TREE multicore version 2.3.4 COVID-edition for Linux x86 64-bit built Jun 18 2024
+Developed by Bui Quang Minh, James Barbetti, Nguyen Lam Tung, Olga Chernomor,
+Heiko Schmidt, Dominik Schrempf, Michael Woodhams, Ly Trong Nhan, Thomas Wong
+
+Host:    ab3501280c72 (SSE4.2, 7 GB RAM)
+Command: iqtree -s 50_genes.fa -z ../bear_species_trees_topologies.tre -m LG+C20+F+G -te ../ultrafast_bootstrap/50_genes.fa.treefile -zb 1000 -zw -au -nt 8 -redo
+Seed:    319787 (Using SPRNG - Scalable Parallel Random Number Generator)
+Time:    Wed Jul  3 11:56:11 2024
+Kernel:  SSE2 - 8 threads (12 CPU cores detected)
+
+Reading alignment file 50_genes.fa ... Fasta format detected
+Reading fasta file: done in 0.00492113 secs using 73.99% CPU
+Alignment most likely contains protein sequences
+Alignment has 8 sequences with 11259 columns, 4730 distinct patterns
+2339 parsimony-informative, 2142 singleton sites, 6777 constant sites
+                         Gap/Ambiguity  Composition  p-value
+Analyzing sequences: done in 0.00052575 secs using 244% CPU
+   1  UrsusArctos_Margo         44.62%    passed     95.57%
+   2  UrsusArctos_Adelaide       2.19%    passed     99.93%
+   3  UrsusAmericanus_Noah      18.63%    passed     87.22%
+   4  UrsusAmericanus_Montana   14.56%    passed     82.20%
+   5  UrsusMaritimus_Maria       6.89%    passed    100.00%
+   6  UrsusMaritimus_Maripepa    4.72%    passed     87.67%
+   7  Ailuropoda_Siro            7.25%    passed     97.05%
+   8  Ailuropoda_Pepe           17.45%    passed     98.49%
+****  TOTAL                     14.54%  0 sequences failed composition chi2 test (p-value<5%; df=19)
+Reading input tree file ../ultrafast_bootstrap/50_genes.fa.treefile ...
+Model LG+C20+F+G is alias for LG+POISSON+G+FMIX{C20pi1:1:0.0559910600,C20pi2:1:0.0514824870,C20pi3:1:0.0812922124,C20pi4:1:0.0721976867,C20pi5:1:0.0556718858,C20pi6:1:0.0331003080,C20pi7:1:0.0589501763,C20pi8:1:0.0263756889,C20pi9:1:0.0307584220,C20pi10:1:0.0376701125,C20pi11:1:0.0303058290,C20pi12:1:0.0808775576,C20pi13:1:0.0263349134,C20pi14:1:0.0579101455,C20pi15:1:0.0371248064,C20pi16:1:0.0586867766,C20pi17:1:0.0561479138,C20pi18:1:0.0349810886,C20pi19:1:0.0544937394,C20pi20:1:0.0596471901}+F+G
+
+NOTE: 493 MB RAM (0 GB) is required!
+Estimate model parameters (epsilon = 0.010)
+1. Initial log-likelihood: -80830.831
+2. Current log-likelihood: -79352.066
+3. Current log-likelihood: -79340.102
+4. Current log-likelihood: -79339.211
+5. Current log-likelihood: -79339.176
+6. Current log-likelihood: -79339.163
+7. Current log-likelihood: -79339.151
+8. Current log-likelihood: -79339.140
+Optimal log-likelihood: -79339.130
+Mixture weights: 0.620 0.025 0.006 0.023 0.049 0.020 0.059 0.016 0.022 0.000 0.018 0.000 0.031 0.027 0.022 0.012 0.021 0.028 0.000 0.000 0.001
+Gamma shape alpha: 0.321
+Parameters optimization took 8 rounds (11.436 sec)
+WARNING: The mixture model might be overfitting because some mixture weights are estimated close to zero
+Wrote distance file to... 
+BEST SCORE FOUND : -79339.130
+Total tree length: 1.416
+
+Total number of iterations: 0
+CPU time used for tree search: 0.000 sec (0h:0m:0s)
+Wall-clock time used for tree search: 0.000 sec (0h:0m:0s)
+Total CPU time used: 80.493 sec (0h:1m:20s)
+Total wall-clock time used: 11.478 sec (0h:0m:11s)
+Reading trees in ../bear_species_trees_topologies.tre ...
+
+3 trees detected
+Note: 18.226 MB of RAM required!
+Creating 1000 bootstrap replicates...
+done
+Tree 1 / LogL: -79339.130
+Tree 2 / LogL: -79517.690
+Tree 3 / LogL: -79519.646
+Performing RELL-BP test...
+Performing KH and SH test...
+Computing pairwise logl difference variance ...
+Performing WKH and WSH test...
+Performing ELW test...
+Performing approximately unbiased (AU) test...
+WARNING: Too few replicates for AU test. At least -zb 10000 for reliable results!
+0 MB required for AU test
+Generating 10 x 1000 multiscale bootstrap replicates... 0.213 seconds
+TreeID	AU	RSS	d	c
+1	1.000	0.178	-6.215	1.324
+2	0.000	0.181	6.158	-1.280
+3	0.000	0.000	12.289	-4.230
+Time for AU test: 0.214 seconds
+Time for evaluating all trees: 5.596 sec.
+
+Analysis results written to: 
+  IQ-TREE report:                50_genes.fa.iqtree
+  Maximum-likelihood tree:       50_genes.fa.treefile
+  Evaluated user trees:          50_genes.fa.trees
+  Screen log file:               50_genes.fa.log
+
+Date and Time: Wed Jul  3 11:56:28 2024
