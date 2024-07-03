@@ -152,3 +152,14 @@ For executing the analysis run:
 >- **Does this result change with the different analyses?**
 
 ***
+
+# Site concordance factor
+
+IQ-TREE allows you also to calculate the percentage of sites that support a given clade in a phylogenetic tree. Such measure is called 'site concordance factor' (sCF) and it is calculated using 2 inputs (the reconstructed phylogenetic tree and the alignment) as follows:
+
+`iqtree -t PREVIOUS_TREE -s 50_genes.fa -m MODEL --scfl 100 --prefix site_concordance -nt 8`
+
+
+
+
+
