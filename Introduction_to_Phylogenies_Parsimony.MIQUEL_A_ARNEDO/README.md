@@ -32,7 +32,7 @@ We will investigate the phylogenetic relationships of bears—Family [Ursidae](h
 
 ![data](../Maximum_Likelihood.JESUS_LOZANO/img/data.png)
 
-
+![data](../Introduction_to_Phylogenies_Parsimony.MIQUEL_A_ARNEDO/img/bears1.png.001.png)
 
 TNT uses it own format. Supposedly, also accepts NEXUS format, although it is a little bit picky! (e.g. use the simple NEXUS format in Mesquite). Having the sequences in fasta format as well will help you to recode the gaps as absence/presence characters (with Seqedit).
 
