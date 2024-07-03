@@ -1,0 +1,534 @@
+IQ-TREE multicore version 2.3.4 COVID-edition for Linux x86 64-bit built Jun 18 2024
+Developed by Bui Quang Minh, James Barbetti, Nguyen Lam Tung, Olga Chernomor,
+Heiko Schmidt, Dominik Schrempf, Michael Woodhams, Ly Trong Nhan, Thomas Wong
+
+Host:    ab3501280c72 (SSE4.2, 7 GB RAM)
+Command: iqtree -s 50_genes.fa -m LG+C20+F+G -b 5 -nt 8 -redo
+Seed:    285936 (Using SPRNG - Scalable Parallel Random Number Generator)
+Time:    Wed Jul  3 10:04:32 2024
+Kernel:  SSE2 - 8 threads (12 CPU cores detected)
+
+Reading alignment file 50_genes.fa ... Fasta format detected
+Reading fasta file: done in 0.00457079 secs using 99.3% CPU
+Alignment most likely contains protein sequences
+Alignment has 8 sequences with 11259 columns, 4730 distinct patterns
+2339 parsimony-informative, 2142 singleton sites, 6777 constant sites
+                         Gap/Ambiguity  Composition  p-value
+Analyzing sequences: done in 0.00057325 secs using 291.5% CPU
+   1  UrsusArctos_Margo         44.62%    passed     95.57%
+   2  UrsusArctos_Adelaide       2.19%    passed     99.93%
+   3  UrsusAmericanus_Noah      18.63%    passed     87.22%
+   4  UrsusAmericanus_Montana   14.56%    passed     82.20%
+   5  UrsusMaritimus_Maria       6.89%    passed    100.00%
+   6  UrsusMaritimus_Maripepa    4.72%    passed     87.67%
+   7  Ailuropoda_Siro            7.25%    passed     97.05%
+   8  Ailuropoda_Pepe           17.45%    passed     98.49%
+****  TOTAL                     14.54%  0 sequences failed composition chi2 test (p-value<5%; df=19)
+
+===> START BOOTSTRAP REPLICATE NUMBER 1
+
+Creating bootstrap alignment (seed: 285936)...
+
+Create initial parsimony tree by phylogenetic likelihood library (PLL)... 0.004 seconds
+Model LG+C20+F+G is alias for LG+POISSON+G+FMIX{C20pi1:1:0.0559910600,C20pi2:1:0.0514824870,C20pi3:1:0.0812922124,C20pi4:1:0.0721976867,C20pi5:1:0.0556718858,C20pi6:1:0.0331003080,C20pi7:1:0.0589501763,C20pi8:1:0.0263756889,C20pi9:1:0.0307584220,C20pi10:1:0.0376701125,C20pi11:1:0.0303058290,C20pi12:1:0.0808775576,C20pi13:1:0.0263349134,C20pi14:1:0.0579101455,C20pi15:1:0.0371248064,C20pi16:1:0.0586867766,C20pi17:1:0.0561479138,C20pi18:1:0.0349810886,C20pi19:1:0.0544937394,C20pi20:1:0.0596471901}+F+G
+
+NOTE: 329 MB RAM (0 GB) is required!
+Estimate model parameters (epsilon = 0.100)
+1. Initial log-likelihood: -80590.939
+2. Current log-likelihood: -78521.925
+3. Current log-likelihood: -78508.623
+4. Current log-likelihood: -78508.059
+Optimal log-likelihood: -78508.030
+Mixture weights: 0.630 0.025 0.000 0.017 0.045 0.018 0.058 0.015 0.005 0.000 0.031 0.000 0.025 0.051 0.023 0.013 0.019 0.024 0.000 0.000 0.001
+Gamma shape alpha: 0.325
+Parameters optimization took 4 rounds (5.350 sec)
+WARNING: The mixture model might be overfitting because some mixture weights are estimated close to zero
+Wrote distance file to... 
+Computing ML distances based on estimated model parameters...
+Calculating distance matrix: done in 0.012305 secs using 128% CPU
+Computing ML distances took 0.013443 sec (of wall-clock time) 0.018111 sec (of CPU time)
+Setting up auxiliary I and S matrices: done in 0.00312317 secs using 118.1% CPU
+Computing RapidNJ tree took 0.015778 sec (of wall-clock time) 0.021884 sec (of CPU time)
+Log-likelihood of RapidNJ tree: -78508.030
+--------------------------------------------------------------------
+|             INITIALIZING CANDIDATE TREE SET                      |
+--------------------------------------------------------------------
+Generating 99 parsimony trees... 0.192 second
+Computing log-likelihood of 50 initial trees ... 11.407 seconds
+Current best score: -78508.030
+
+Do NNI search on 20 best initial trees
+Estimate model parameters (epsilon = 0.100)
+WARNING: The mixture model might be overfitting because some mixture weights are estimated close to zero
+BETTER TREE FOUND at iteration 1: -78508.018
+Iteration 10 / LogL: -78509.430 / Time: 0h:0m:40s
+Iteration 20 / LogL: -78510.140 / Time: 0h:1m:5s
+Finish initializing candidate tree set (1)
+Current best tree score: -78508.018 / CPU time: 58.590
+Number of iterations: 20
+--------------------------------------------------------------------
+|               OPTIMIZING CANDIDATE TREE SET                      |
+--------------------------------------------------------------------
+Iteration 30 / LogL: -78508.362 / Time: 0h:1m:28s (0h:3m:36s left)
+Iteration 40 / LogL: -78508.365 / Time: 0h:1m:50s (0h:2m:52s left)
+Iteration 50 / LogL: -78510.311 / Time: 0h:2m:15s (0h:2m:21s left)
+Iteration 60 / LogL: -78510.653 / Time: 0h:2m:36s (0h:1m:48s left)
+Iteration 70 / LogL: -78510.653 / Time: 0h:2m:58s (0h:1m:20s left)
+Iteration 80 / LogL: -78508.018 / Time: 0h:3m:23s (0h:0m:53s left)
+Iteration 90 / LogL: -78508.018 / Time: 0h:3m:49s (0h:0m:28s left)
+Iteration 100 / LogL: -78508.190 / Time: 0h:4m:16s (0h:0m:2s left)
+TREE SEARCH COMPLETED AFTER 102 ITERATIONS / Time: 0h:4m:20s
+
+--------------------------------------------------------------------
+|                    FINALIZING TREE SEARCH                        |
+--------------------------------------------------------------------
+Performs final model parameters optimization
+Estimate model parameters (epsilon = 0.010)
+1. Initial log-likelihood: -78508.018
+2. Current log-likelihood: -78508.008
+Optimal log-likelihood: -78507.998
+Mixture weights: 0.630 0.025 0.000 0.017 0.045 0.018 0.058 0.014 0.005 0.000 0.031 0.000 0.025 0.051 0.023 0.013 0.019 0.024 0.000 0.000 0.001
+Gamma shape alpha: 0.325
+Parameters optimization took 2 rounds (1.373 sec)
+WARNING: The mixture model might be overfitting because some mixture weights are estimated close to zero
+BEST SCORE FOUND : -78507.998
+Total tree length: 1.372
+
+Total number of iterations: 102
+CPU time used for tree search: 1817.890 sec (0h:30m:17s)
+Wall-clock time used for tree search: 253.590 sec (0h:4m:13s)
+Total CPU time used: 1871.206 sec (0h:31m:11s)
+Total wall-clock time used: 261.422 sec (0h:4m:21s)
+
+===> START BOOTSTRAP REPLICATE NUMBER 2
+
+Creating bootstrap alignment (seed: 285937)...
+
+Create initial parsimony tree by phylogenetic likelihood library (PLL)... 0.002 seconds
+Model LG+C20+F+G is alias for LG+POISSON+G+FMIX{C20pi1:1:0.0559910600,C20pi2:1:0.0514824870,C20pi3:1:0.0812922124,C20pi4:1:0.0721976867,C20pi5:1:0.0556718858,C20pi6:1:0.0331003080,C20pi7:1:0.0589501763,C20pi8:1:0.0263756889,C20pi9:1:0.0307584220,C20pi10:1:0.0376701125,C20pi11:1:0.0303058290,C20pi12:1:0.0808775576,C20pi13:1:0.0263349134,C20pi14:1:0.0579101455,C20pi15:1:0.0371248064,C20pi16:1:0.0586867766,C20pi17:1:0.0561479138,C20pi18:1:0.0349810886,C20pi19:1:0.0544937394,C20pi20:1:0.0596471901}+F+G
+
+NOTE: 328 MB RAM (0 GB) is required!
+Estimate model parameters (epsilon = 0.100)
+1. Initial log-likelihood: -81261.463
+2. Current log-likelihood: -79130.629
+3. Current log-likelihood: -79117.523
+4. Current log-likelihood: -79115.744
+5. Current log-likelihood: -79115.556
+Optimal log-likelihood: -79115.548
+Mixture weights: 0.630 0.024 0.008 0.018 0.045 0.018 0.062 0.016 0.021 0.002 0.020 0.000 0.028 0.030 0.020 0.012 0.022 0.025 0.000 0.000 0.001
+Gamma shape alpha: 0.324
+Parameters optimization took 5 rounds (5.884 sec)
+WARNING: The mixture model might be overfitting because some mixture weights are estimated close to zero
+Wrote distance file to... 
+Computing ML distances based on estimated model parameters...
+Calculating distance matrix: done in 0.00154208 secs using 462% CPU
+Computing ML distances took 0.001790 sec (of wall-clock time) 0.008685 sec (of CPU time)
+Setting up auxiliary I and S matrices: done in 0.00103158 secs using 249.7% CPU
+Computing RapidNJ tree took 0.015341 sec (of wall-clock time) 0.012493 sec (of CPU time)
+Log-likelihood of RapidNJ tree: -79115.548
+--------------------------------------------------------------------
+|             INITIALIZING CANDIDATE TREE SET                      |
+--------------------------------------------------------------------
+Generating 99 parsimony trees... 0.225 second
+Computing log-likelihood of 52 initial trees ... 12.527 seconds
+Current best score: -79115.548
+
+Do NNI search on 20 best initial trees
+Estimate model parameters (epsilon = 0.100)
+WARNING: The mixture model might be overfitting because some mixture weights are estimated close to zero
+BETTER TREE FOUND at iteration 1: -79115.543
+Iteration 10 / LogL: -79116.915 / Time: 0h:5m:5s
+Iteration 20 / LogL: -79117.999 / Time: 0h:5m:29s
+Finish initializing candidate tree set (1)
+Current best tree score: -79115.543 / CPU time: 61.375
+Number of iterations: 20
+--------------------------------------------------------------------
+|               OPTIMIZING CANDIDATE TREE SET                      |
+--------------------------------------------------------------------
+Iteration 30 / LogL: -79118.698 / Time: 0h:5m:52s (0h:3m:42s left)
+UPDATE BEST LOG-LIKELIHOOD: -79115.543
+Iteration 40 / LogL: -79118.754 / Time: 0h:6m:16s (0h:2m:59s left)
+Iteration 50 / LogL: -79115.543 / Time: 0h:6m:40s (0h:2m:25s left)
+Iteration 60 / LogL: -79115.543 / Time: 0h:7m:2s (0h:1m:52s left)
+Iteration 70 / LogL: -79115.543 / Time: 0h:7m:22s (0h:1m:21s left)
+Iteration 80 / LogL: -79115.618 / Time: 0h:7m:48s (0h:0m:55s left)
+Iteration 90 / LogL: -79115.618 / Time: 0h:8m:12s (0h:0m:28s left)
+Iteration 100 / LogL: -79117.016 / Time: 0h:8m:36s (0h:0m:2s left)
+TREE SEARCH COMPLETED AFTER 102 ITERATIONS / Time: 0h:8m:40s
+
+--------------------------------------------------------------------
+|                    FINALIZING TREE SEARCH                        |
+--------------------------------------------------------------------
+Performs final model parameters optimization
+Estimate model parameters (epsilon = 0.010)
+1. Initial log-likelihood: -79115.543
+Optimal log-likelihood: -79115.539
+Mixture weights: 0.629 0.024 0.008 0.018 0.045 0.018 0.062 0.016 0.021 0.002 0.020 0.000 0.028 0.030 0.020 0.012 0.022 0.025 0.000 0.000 0.001
+Gamma shape alpha: 0.324
+Parameters optimization took 1 rounds (0.989 sec)
+WARNING: The mixture model might be overfitting because some mixture weights are estimated close to zero
+BEST SCORE FOUND : -79115.539
+Total tree length: 1.401
+
+Total number of iterations: 102
+CPU time used for tree search: 1804.040 sec (0h:30m:4s)
+Wall-clock time used for tree search: 251.692 sec (0h:4m:11s)
+Total CPU time used: 3732.905 sec (1h:2m:12s)
+Total wall-clock time used: 521.134 sec (0h:8m:41s)
+
+===> START BOOTSTRAP REPLICATE NUMBER 3
+
+Creating bootstrap alignment (seed: 285938)...
+
+Create initial parsimony tree by phylogenetic likelihood library (PLL)... 0.002 seconds
+Model LG+C20+F+G is alias for LG+POISSON+G+FMIX{C20pi1:1:0.0559910600,C20pi2:1:0.0514824870,C20pi3:1:0.0812922124,C20pi4:1:0.0721976867,C20pi5:1:0.0556718858,C20pi6:1:0.0331003080,C20pi7:1:0.0589501763,C20pi8:1:0.0263756889,C20pi9:1:0.0307584220,C20pi10:1:0.0376701125,C20pi11:1:0.0303058290,C20pi12:1:0.0808775576,C20pi13:1:0.0263349134,C20pi14:1:0.0579101455,C20pi15:1:0.0371248064,C20pi16:1:0.0586867766,C20pi17:1:0.0561479138,C20pi18:1:0.0349810886,C20pi19:1:0.0544937394,C20pi20:1:0.0596471901}+F+G
+
+NOTE: 333 MB RAM (0 GB) is required!
+Estimate model parameters (epsilon = 0.100)
+1. Initial log-likelihood: -82165.160
+2. Current log-likelihood: -79841.841
+3. Current log-likelihood: -79827.469
+4. Current log-likelihood: -79825.100
+Optimal log-likelihood: -79824.998
+Mixture weights: 0.669 0.027 0.003 0.018 0.040 0.018 0.052 0.015 0.006 0.000 0.026 0.000 0.023 0.028 0.019 0.014 0.019 0.022 0.000 0.000 0.001
+Gamma shape alpha: 0.310
+Parameters optimization took 4 rounds (5.317 sec)
+WARNING: The mixture model might be overfitting because some mixture weights are estimated close to zero
+Wrote distance file to... 
+Computing ML distances based on estimated model parameters...
+Calculating distance matrix: done in 0.001565 secs using 506.5% CPU
+Computing ML distances took 0.001750 sec (of wall-clock time) 0.008722 sec (of CPU time)
+Setting up auxiliary I and S matrices: done in 0.00996221 secs using 17.8% CPU
+Computing RapidNJ tree took 0.023747 sec (of wall-clock time) 0.008388 sec (of CPU time)
+Log-likelihood of RapidNJ tree: -79824.997
+--------------------------------------------------------------------
+|             INITIALIZING CANDIDATE TREE SET                      |
+--------------------------------------------------------------------
+Generating 99 parsimony trees... 0.192 second
+Computing log-likelihood of 51 initial trees ... 12.509 seconds
+Current best score: -79824.997
+
+Do NNI search on 20 best initial trees
+Estimate model parameters (epsilon = 0.100)
+WARNING: The mixture model might be overfitting because some mixture weights are estimated close to zero
+BETTER TREE FOUND at iteration 1: -79824.965
+Iteration 10 / LogL: -79825.166 / Time: 0h:9m:26s
+Iteration 20 / LogL: -79827.873 / Time: 0h:9m:53s
+Finish initializing candidate tree set (1)
+Current best tree score: -79824.965 / CPU time: 65.832
+Number of iterations: 20
+--------------------------------------------------------------------
+|               OPTIMIZING CANDIDATE TREE SET                      |
+--------------------------------------------------------------------
+UPDATE BEST LOG-LIKELIHOOD: -79824.965
+Iteration 30 / LogL: -79827.021 / Time: 0h:10m:18s (0h:3m:57s left)
+UPDATE BEST LOG-LIKELIHOOD: -79824.965
+Iteration 40 / LogL: -79824.965 / Time: 0h:10m:38s (0h:3m:4s left)
+Iteration 50 / LogL: -79827.134 / Time: 0h:11m:4s (0h:2m:28s left)
+Iteration 60 / LogL: -79824.965 / Time: 0h:11m:24s (0h:1m:53s left)
+Iteration 70 / LogL: -79824.965 / Time: 0h:11m:47s (0h:1m:23s left)
+UPDATE BEST LOG-LIKELIHOOD: -79824.965
+Iteration 80 / LogL: -79828.218 / Time: 0h:12m:10s (0h:0m:55s left)
+Iteration 90 / LogL: -79828.218 / Time: 0h:12m:37s (0h:0m:29s left)
+Iteration 100 / LogL: -79824.965 / Time: 0h:12m:57s (0h:0m:2s left)
+TREE SEARCH COMPLETED AFTER 102 ITERATIONS / Time: 0h:13m:2s
+
+--------------------------------------------------------------------
+|                    FINALIZING TREE SEARCH                        |
+--------------------------------------------------------------------
+Performs final model parameters optimization
+Estimate model parameters (epsilon = 0.010)
+1. Initial log-likelihood: -79824.965
+2. Current log-likelihood: -79824.940
+3. Current log-likelihood: -79824.920
+4. Current log-likelihood: -79824.903
+5. Current log-likelihood: -79824.889
+6. Current log-likelihood: -79824.877
+7. Current log-likelihood: -79824.866
+Optimal log-likelihood: -79824.856
+Mixture weights: 0.668 0.028 0.004 0.018 0.040 0.018 0.052 0.015 0.006 0.000 0.026 0.000 0.023 0.028 0.020 0.013 0.019 0.022 0.000 0.000 0.001
+Gamma shape alpha: 0.310
+Parameters optimization took 7 rounds (4.570 sec)
+WARNING: The mixture model might be overfitting because some mixture weights are estimated close to zero
+BEST SCORE FOUND : -79824.856
+Total tree length: 1.419
+
+Total number of iterations: 102
+CPU time used for tree search: 1833.137 sec (0h:30m:33s)
+Wall-clock time used for tree search: 255.186 sec (0h:4m:15s)
+Total CPU time used: 5645.054 sec (1h:34m:5s)
+Total wall-clock time used: 787.365 sec (0h:13m:7s)
+
+===> START BOOTSTRAP REPLICATE NUMBER 4
+
+Creating bootstrap alignment (seed: 285939)...
+
+Create initial parsimony tree by phylogenetic likelihood library (PLL)... 0.002 seconds
+Model LG+C20+F+G is alias for LG+POISSON+G+FMIX{C20pi1:1:0.0559910600,C20pi2:1:0.0514824870,C20pi3:1:0.0812922124,C20pi4:1:0.0721976867,C20pi5:1:0.0556718858,C20pi6:1:0.0331003080,C20pi7:1:0.0589501763,C20pi8:1:0.0263756889,C20pi9:1:0.0307584220,C20pi10:1:0.0376701125,C20pi11:1:0.0303058290,C20pi12:1:0.0808775576,C20pi13:1:0.0263349134,C20pi14:1:0.0579101455,C20pi15:1:0.0371248064,C20pi16:1:0.0586867766,C20pi17:1:0.0561479138,C20pi18:1:0.0349810886,C20pi19:1:0.0544937394,C20pi20:1:0.0596471901}+F+G
+
+NOTE: 334 MB RAM (0 GB) is required!
+Estimate model parameters (epsilon = 0.100)
+1. Initial log-likelihood: -82303.997
+2. Current log-likelihood: -80191.309
+3. Current log-likelihood: -80180.557
+4. Current log-likelihood: -80179.220
+Optimal log-likelihood: -80179.147
+Mixture weights: 0.605 0.031 0.009 0.022 0.051 0.028 0.057 0.015 0.003 0.007 0.015 0.000 0.038 0.028 0.022 0.008 0.027 0.034 0.000 0.000 0.001
+Gamma shape alpha: 0.326
+Parameters optimization took 4 rounds (5.283 sec)
+WARNING: The mixture model might be overfitting because some mixture weights are estimated close to zero
+Wrote distance file to... 
+Computing ML distances based on estimated model parameters...
+Calculating distance matrix: done in 0.00155 secs using 522% CPU
+Computing ML distances took 0.001723 sec (of wall-clock time) 0.008269 sec (of CPU time)
+Setting up auxiliary I and S matrices: done in 0.00184154 secs using 140.3% CPU
+Computing RapidNJ tree took 0.010402 sec (of wall-clock time) 0.007297 sec (of CPU time)
+Log-likelihood of RapidNJ tree: -80179.147
+--------------------------------------------------------------------
+|             INITIALIZING CANDIDATE TREE SET                      |
+--------------------------------------------------------------------
+Generating 99 parsimony trees... 0.205 second
+Computing log-likelihood of 54 initial trees ... 13.126 seconds
+Current best score: -80179.147
+
+Do NNI search on 20 best initial trees
+Estimate model parameters (epsilon = 0.100)
+WARNING: The mixture model might be overfitting because some mixture weights are estimated close to zero
+BETTER TREE FOUND at iteration 1: -80179.106
+Iteration 10 / LogL: -80179.317 / Time: 0h:13m:54s
+Iteration 20 / LogL: -80181.582 / Time: 0h:14m:20s
+Finish initializing candidate tree set (1)
+Current best tree score: -80179.106 / CPU time: 66.326
+Number of iterations: 20
+--------------------------------------------------------------------
+|               OPTIMIZING CANDIDATE TREE SET                      |
+--------------------------------------------------------------------
+UPDATE BEST LOG-LIKELIHOOD: -80179.106
+Iteration 30 / LogL: -80180.129 / Time: 0h:14m:47s (0h:4m:4s left)
+UPDATE BEST LOG-LIKELIHOOD: -80179.106
+UPDATE BEST LOG-LIKELIHOOD: -80179.106
+Iteration 40 / LogL: -80179.106 / Time: 0h:15m:9s (0h:3m:11s left)
+Iteration 50 / LogL: -80180.428 / Time: 0h:15m:34s (0h:2m:32s left)
+Iteration 60 / LogL: -80179.230 / Time: 0h:16m:3s (0h:2m:2s left)
+Iteration 70 / LogL: -80179.106 / Time: 0h:16m:26s (0h:1m:29s left)
+Iteration 80 / LogL: -80180.476 / Time: 0h:16m:50s (0h:0m:59s left)
+Iteration 90 / LogL: -80182.377 / Time: 0h:17m:15s (0h:0m:30s left)
+Iteration 100 / LogL: -80180.920 / Time: 0h:17m:41s (0h:0m:2s left)
+TREE SEARCH COMPLETED AFTER 102 ITERATIONS / Time: 0h:17m:46s
+
+--------------------------------------------------------------------
+|                    FINALIZING TREE SEARCH                        |
+--------------------------------------------------------------------
+Performs final model parameters optimization
+Estimate model parameters (epsilon = 0.010)
+1. Initial log-likelihood: -80179.106
+2. Current log-likelihood: -80179.075
+3. Current log-likelihood: -80179.050
+4. Current log-likelihood: -80179.031
+5. Current log-likelihood: -80179.014
+6. Current log-likelihood: -80179.001
+7. Current log-likelihood: -80178.989
+8. Current log-likelihood: -80178.979
+Optimal log-likelihood: -80178.969
+Mixture weights: 0.604 0.031 0.009 0.022 0.050 0.028 0.057 0.015 0.004 0.007 0.015 0.000 0.038 0.028 0.022 0.008 0.027 0.034 0.000 0.000 0.001
+Gamma shape alpha: 0.326
+Parameters optimization took 8 rounds (5.175 sec)
+WARNING: The mixture model might be overfitting because some mixture weights are estimated close to zero
+BEST SCORE FOUND : -80178.969
+Total tree length: 1.467
+
+Total number of iterations: 102
+CPU time used for tree search: 1951.739 sec (0h:32m:31s)
+Wall-clock time used for tree search: 272.191 sec (0h:4m:32s)
+Total CPU time used: 7680.271 sec (2h:8m:0s)
+Total wall-clock time used: 1071.197 sec (0h:17m:51s)
+
+===> START BOOTSTRAP REPLICATE NUMBER 5
+
+Creating bootstrap alignment (seed: 285940)...
+
+Create initial parsimony tree by phylogenetic likelihood library (PLL)... 0.002 seconds
+Model LG+C20+F+G is alias for LG+POISSON+G+FMIX{C20pi1:1:0.0559910600,C20pi2:1:0.0514824870,C20pi3:1:0.0812922124,C20pi4:1:0.0721976867,C20pi5:1:0.0556718858,C20pi6:1:0.0331003080,C20pi7:1:0.0589501763,C20pi8:1:0.0263756889,C20pi9:1:0.0307584220,C20pi10:1:0.0376701125,C20pi11:1:0.0303058290,C20pi12:1:0.0808775576,C20pi13:1:0.0263349134,C20pi14:1:0.0579101455,C20pi15:1:0.0371248064,C20pi16:1:0.0586867766,C20pi17:1:0.0561479138,C20pi18:1:0.0349810886,C20pi19:1:0.0544937394,C20pi20:1:0.0596471901}+F+G
+
+NOTE: 328 MB RAM (0 GB) is required!
+Estimate model parameters (epsilon = 0.100)
+1. Initial log-likelihood: -80263.491
+2. Current log-likelihood: -78211.233
+3. Current log-likelihood: -78198.474
+4. Current log-likelihood: -78197.704
+Optimal log-likelihood: -78197.667
+Mixture weights: 0.635 0.024 0.003 0.024 0.043 0.021 0.051 0.012 0.013 0.000 0.015 0.000 0.029 0.031 0.031 0.015 0.022 0.026 0.005 0.001 0.001
+Gamma shape alpha: 0.317
+Parameters optimization took 4 rounds (5.229 sec)
+WARNING: The mixture model might be overfitting because some mixture weights are estimated close to zero
+Wrote distance file to... 
+Computing ML distances based on estimated model parameters...
+Calculating distance matrix: done in 0.00148237 secs using 516.5% CPU
+Computing ML distances took 0.001644 sec (of wall-clock time) 0.007825 sec (of CPU time)
+Setting up auxiliary I and S matrices: done in 0.00164025 secs using 162.5% CPU
+Computing RapidNJ tree took 0.010457 sec (of wall-clock time) 0.014433 sec (of CPU time)
+Log-likelihood of RapidNJ tree: -78197.667
+--------------------------------------------------------------------
+|             INITIALIZING CANDIDATE TREE SET                      |
+--------------------------------------------------------------------
+Generating 99 parsimony trees... 0.215 second
+Computing log-likelihood of 55 initial trees ... 13.181 seconds
+Current best score: -78197.667
+
+Do NNI search on 20 best initial trees
+Estimate model parameters (epsilon = 0.100)
+WARNING: The mixture model might be overfitting because some mixture weights are estimated close to zero
+BETTER TREE FOUND at iteration 1: -78197.376
+Iteration 10 / LogL: -78199.112 / Time: 0h:18m:36s
+Iteration 20 / LogL: -78197.673 / Time: 0h:19m:1s
+Finish initializing candidate tree set (1)
+Current best tree score: -78197.376 / CPU time: 63.696
+Number of iterations: 20
+--------------------------------------------------------------------
+|               OPTIMIZING CANDIDATE TREE SET                      |
+--------------------------------------------------------------------
+UPDATE BEST LOG-LIKELIHOOD: -78197.376
+Iteration 30 / LogL: -78201.815 / Time: 0h:19m:27s (0h:3m:55s left)
+Iteration 40 / LogL: -78199.530 / Time: 0h:19m:51s (0h:3m:8s left)
+UPDATE BEST LOG-LIKELIHOOD: -78197.376
+Iteration 50 / LogL: -78198.964 / Time: 0h:20m:17s (0h:2m:31s left)
+UPDATE BEST LOG-LIKELIHOOD: -78197.376
+Iteration 60 / LogL: -78198.769 / Time: 0h:20m:37s (0h:1m:55s left)
+Iteration 70 / LogL: -78198.474 / Time: 0h:21m:0s (0h:1m:25s left)
+Iteration 80 / LogL: -78197.376 / Time: 0h:21m:26s (0h:0m:57s left)
+Iteration 90 / LogL: -78197.707 / Time: 0h:21m:51s (0h:0m:29s left)
+Iteration 100 / LogL: -78201.839 / Time: 0h:22m:14s (0h:0m:2s left)
+TREE SEARCH COMPLETED AFTER 102 ITERATIONS / Time: 0h:22m:20s
+
+--------------------------------------------------------------------
+|                    FINALIZING TREE SEARCH                        |
+--------------------------------------------------------------------
+Performs final model parameters optimization
+Estimate model parameters (epsilon = 0.010)
+1. Initial log-likelihood: -78197.376
+2. Current log-likelihood: -78197.366
+Optimal log-likelihood: -78197.357
+Mixture weights: 0.627 0.023 0.003 0.025 0.045 0.021 0.053 0.012 0.015 0.000 0.016 0.000 0.031 0.031 0.029 0.015 0.023 0.027 0.005 0.001 0.001
+Gamma shape alpha: 0.317
+Parameters optimization took 2 rounds (1.383 sec)
+WARNING: The mixture model might be overfitting because some mixture weights are estimated close to zero
+BEST SCORE FOUND : -78197.357
+Total tree length: 1.374
+
+Total number of iterations: 102
+CPU time used for tree search: 1887.304 sec (0h:31m:27s)
+Wall-clock time used for tree search: 263.085 sec (0h:4m:23s)
+Total CPU time used: 9623.208 sec (2h:40m:23s)
+Total wall-clock time used: 1342.029 sec (0h:22m:22s)
+
+===> COMPUTE CONSENSUS TREE FROM 5 BOOTSTRAP TREES
+
+Reading tree(s) file 50_genes.fa.boottrees ...
+5 tree(s) loaded (0 rooted and 5 unrooted)
+0 split(s) discarded because frequency <= -1.000
+13 splits found
+Consensus tree written to 50_genes.fa.contree
+
+===> START ANALYSIS ON THE ORIGINAL ALIGNMENT
+
+
+Create initial parsimony tree by phylogenetic likelihood library (PLL)... 0.002 seconds
+Model LG+C20+F+G is alias for LG+POISSON+G+FMIX{C20pi1:1:0.0559910600,C20pi2:1:0.0514824870,C20pi3:1:0.0812922124,C20pi4:1:0.0721976867,C20pi5:1:0.0556718858,C20pi6:1:0.0331003080,C20pi7:1:0.0589501763,C20pi8:1:0.0263756889,C20pi9:1:0.0307584220,C20pi10:1:0.0376701125,C20pi11:1:0.0303058290,C20pi12:1:0.0808775576,C20pi13:1:0.0263349134,C20pi14:1:0.0579101455,C20pi15:1:0.0371248064,C20pi16:1:0.0586867766,C20pi17:1:0.0561479138,C20pi18:1:0.0349810886,C20pi19:1:0.0544937394,C20pi20:1:0.0596471901}+F+G
+
+NOTE: 493 MB RAM (0 GB) is required!
+Estimate model parameters (epsilon = 0.100)
+1. Initial log-likelihood: -81474.905
+2. Current log-likelihood: -79353.217
+3. Current log-likelihood: -79339.932
+4. Current log-likelihood: -79339.150
+Optimal log-likelihood: -79339.111
+Mixture weights: 0.620 0.025 0.006 0.023 0.049 0.020 0.059 0.016 0.021 0.000 0.019 0.000 0.031 0.027 0.022 0.012 0.021 0.028 0.000 0.000 0.001
+Gamma shape alpha: 0.321
+Parameters optimization took 4 rounds (7.669 sec)
+WARNING: The mixture model might be overfitting because some mixture weights are estimated close to zero
+Wrote distance file to... 
+Computing ML distances based on estimated model parameters...
+Calculating distance matrix: done in 0.00162925 secs using 519.3% CPU
+Computing ML distances took 0.001801 sec (of wall-clock time) 0.008636 sec (of CPU time)
+Setting up auxiliary I and S matrices: done in 0.001138 secs using 121.3% CPU
+Computing RapidNJ tree took 0.017749 sec (of wall-clock time) 0.005500 sec (of CPU time)
+Log-likelihood of RapidNJ tree: -79339.111
+--------------------------------------------------------------------
+|             INITIALIZING CANDIDATE TREE SET                      |
+--------------------------------------------------------------------
+Generating 99 parsimony trees... 0.199 second
+Computing log-likelihood of 51 initial trees ... 17.996 seconds
+Current best score: -79339.111
+
+Do NNI search on 20 best initial trees
+Estimate model parameters (epsilon = 0.100)
+WARNING: The mixture model might be overfitting because some mixture weights are estimated close to zero
+BETTER TREE FOUND at iteration 1: -79339.100
+Iteration 10 / LogL: -79340.810 / Time: 0h:23m:26s
+Iteration 20 / LogL: -79341.181 / Time: 0h:24m:6s
+Finish initializing candidate tree set (1)
+Current best tree score: -79339.100 / CPU time: 94.653
+Number of iterations: 20
+--------------------------------------------------------------------
+|               OPTIMIZING CANDIDATE TREE SET                      |
+--------------------------------------------------------------------
+UPDATE BEST LOG-LIKELIHOOD: -79339.100
+Iteration 30 / LogL: -79343.008 / Time: 0h:24m:41s (0h:5m:41s left)
+UPDATE BEST LOG-LIKELIHOOD: -79339.100
+Iteration 40 / LogL: -79339.184 / Time: 0h:25m:14s (0h:4m:29s left)
+Iteration 50 / LogL: -79340.446 / Time: 0h:25m:53s (0h:3m:40s left)
+Iteration 60 / LogL: -79341.882 / Time: 0h:26m:36s (0h:2m:56s left)
+Iteration 70 / LogL: -79341.882 / Time: 0h:27m:6s (0h:2m:7s left)
+Iteration 80 / LogL: -79339.273 / Time: 0h:27m:43s (0h:1m:25s left)
+Iteration 90 / LogL: -79339.204 / Time: 0h:28m:22s (0h:0m:44s left)
+Iteration 100 / LogL: -79339.100 / Time: 0h:28m:55s (0h:0m:3s left)
+TREE SEARCH COMPLETED AFTER 102 ITERATIONS / Time: 0h:29m:1s
+
+--------------------------------------------------------------------
+|                    FINALIZING TREE SEARCH                        |
+--------------------------------------------------------------------
+Performs final model parameters optimization
+Estimate model parameters (epsilon = 0.010)
+1. Initial log-likelihood: -79339.100
+2. Current log-likelihood: -79339.090
+Optimal log-likelihood: -79339.081
+Mixture weights: 0.620 0.025 0.006 0.023 0.049 0.020 0.059 0.016 0.021 0.000 0.019 0.000 0.031 0.027 0.022 0.012 0.021 0.028 0.000 0.000 0.001
+Gamma shape alpha: 0.321
+Parameters optimization took 2 rounds (2.344 sec)
+WARNING: The mixture model might be overfitting because some mixture weights are estimated close to zero
+BEST SCORE FOUND : -79339.081
+Total tree length: 1.416
+
+Total number of iterations: 102
+CPU time used for tree search: 2818.346 sec (0h:46m:58s)
+Wall-clock time used for tree search: 390.186 sec (0h:6m:30s)
+Total CPU time used: 12525.926 sec (3h:28m:45s)
+Total wall-clock time used: 1743.910 sec (0h:29m:3s)
+Reading input trees file 50_genes.fa.contree
+Log-likelihood of consensus tree: -79339.081
+
+===> ASSIGN BOOTSTRAP SUPPORTS TO THE TREE FROM ORIGINAL ALIGNMENT
+
+Reading tree 50_genes.fa.treefile ...
+unrooted tree detected
+Reading tree(s) file 50_genes.fa.boottrees ...
+5 tree(s) loaded (0 rooted and 5 unrooted)
+Rescaling split weights by 20.000
+13 splits found
+Creating bootstrap support values...
+Tree with assigned support written to 50_genes.fa.treefile
+
+Analysis results written to: 
+  IQ-TREE report:                50_genes.fa.iqtree
+  Maximum-likelihood tree:       50_genes.fa.treefile
+  Likelihood distances:          50_genes.fa.mldist
+  Screen log file:               50_genes.fa.log
+
+Total CPU time for bootstrap: 12537.580 seconds.
+Total wall-clock time for bootstrap: 1745.552 seconds.
+
+Non-parametric bootstrap results written to:
+  Bootstrap trees:          50_genes.fa.boottrees
+  Consensus tree:           50_genes.fa.contree
+
+Date and Time: Wed Jul  3 10:33:37 2024
