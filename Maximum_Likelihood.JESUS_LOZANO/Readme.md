@@ -151,7 +151,9 @@ For executing the analysis run:
 >- **Which of the 3 topologies is more probable?**
 >- **Does this result change with the different analyses?**
 
+
 ***
+
 
 # Dissecting phylogenetic signal
 
@@ -162,6 +164,9 @@ Such measure is called 'site concordance factor' (sCF) and it is calculated usin
 
 
 >- **Do bootstrap values and sCF agree? Why?**
+
+
+***
 
 
 
