@@ -80,7 +80,7 @@ Once modified, you are ready to run the analysis:
 
 `bash ultrafast_iqtree.sh`
 
-More information on the ultrafast bootstrap in: http://www.iqtree.org/doc/Tutorial#assessing-branch-supports-with-ultrafast-bootstrap-approximation and http://www.iqtree.org/doc/Frequently-Asked-Questions#how-do-i-interpret-ultrafast-bootstrap-ufboot-support-values
+Once the analyses is completed, you can visualize the support values over the nodes using a phylogenetic tree visualizer, such as FigTree. More information on the ultrafast bootstrap in: http://www.iqtree.org/doc/Tutorial#assessing-branch-supports-with-ultrafast-bootstrap-approximation and http://www.iqtree.org/doc/Frequently-Asked-Questions#how-do-i-interpret-ultrafast-bootstrap-ufboot-support-values
 
 
 ### Non-parametric bootstrap
@@ -162,7 +162,7 @@ Such measure is called 'site concordance factor' (sCF) and it is calculated usin
 
 `iqtree -t PREVIOUS_TREE -s 50_genes.fa -m MODEL --scfl 100 --prefix site_concordance -nt 8`
 
-You can check sCF values in the labels at the nodes of the tree
+You can see the sCF values from the **`site_concordance.cf.tree`** file into a phylogenetic tree using FigTree. These values are shown together with the ultrafastboostrap in the labels at the nodes of the tree.
 
 >- **Do bootstrap values and sCF agree? Why?**
 
