@@ -162,6 +162,7 @@ Such measure is called 'site concordance factor' (sCF) and it is calculated usin
 
 `iqtree -t PREVIOUS_TREE -s 50_genes.fa -m MODEL --scfl 100 --prefix site_concordance -nt 8`
 
+You can check sCF values in the labels at the nodes of the tree
 
 >- **Do bootstrap values and sCF agree? Why?**
 
