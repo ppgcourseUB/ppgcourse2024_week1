@@ -7,7 +7,7 @@ If you have any questions, contact us at jesus.lozano@ub.edu or mattia.giacomell
 ***
 ## Context
 
-We will be working with an alignment composed by 50 orthologous genes concatenated from 16 bears, 4 individuals for each of the 4 species.
+We will be working with an alignment composed by 50 orthologous genes concatenated from 8 bears, 2 individuals for each of the 4 species (panda, black bear, brown bear and polar bear).
 
 
 ![data](../Maximum_Likelihood.JESUS_LOZANO/img/data.png)
@@ -18,7 +18,7 @@ We will be working with an alignment composed by 50 orthologous genes concatenat
 ***
 ## Data files
 
-For Maximum likelihood tree reconstruction, we will use the software IQ-TREE which you have already installed in the image.
+For Maximum likelihood tree reconstruction, we will use the software IQ-TREE which is already installed in the Docker.
 
 All files for this hands-on class are in the folder **Bear_dataset_ML** provided in the github repository. We will use a separate folder for each analysis to avoid overwritting any files.
 
