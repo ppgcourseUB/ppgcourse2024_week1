@@ -89,7 +89,7 @@ More information on the ultrafast bootstrap in: http://www.iqtree.org/doc/Tutori
 
 `cd ../non_parametric`
 
-2.- Modify the **`non_parametric_iqtree.sh`** script to include the best substitution model where it says **MODEL**. For time constraints, we will just run 5 bootstrap replicates, but normally you will use 100 pseudoreplicates.
+2.- Modify the **`non_parametric_iqtree.sh`** script to include the best substitution model where it says **MODEL**. For time constraints, we will just run 5 bootstrap replicates, but normally you will use 100 bootstrap replicates.
 
 `iqtree -s 50_genes.fa -m MODEL -b 5 -nt 8 -redo`
 
