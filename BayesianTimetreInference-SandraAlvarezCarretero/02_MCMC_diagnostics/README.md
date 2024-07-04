@@ -103,7 +103,7 @@ Once you run this script, a new directory called `dummy_aln` will be created, wh
 ./run_prior_for_tree.sh cytb_calib_MCMCtree.tree mcmctree
 ```
 
-We now have our timetree inferred with all the samples collected by all the chains that passed the filters during MCMC diagnostics (when sampling from the prior)! The next step is to plot the calibration densities VS the marginal densities to verify whether there are any serious clashes that may arise because of truncation or problems with the fossil calibrations used. We will use the [in-house R script `Check_priors_margVScalib.R`](scripts/Check_priors_margVScalib.R) (when using RStudio) or script [in-house R script `Check_priors_margVScalib.R`](scripts/Check_priors_margVScalib_terminal.R) (when running the script from the Terminal) to generate these plots. If the latter, please use the command below:
+We now have our timetree inferred with all the samples collected by all the chains that passed the filters during MCMC diagnostics (when sampling from the prior)! The next step is to plot the calibration densities VS the marginal densities to verify whether there are any serious clashes that may arise because of truncation or problems with the fossil calibrations used. We will use the [in-house R script `Check_priors_margVScalib.R`](scripts/Check_priors_margVScalib.R) (when using RStudio) or script [in-house R script `Check_priors_margVScalib_terminal.R`](scripts/Check_priors_margVScalib_terminal.R) (when running the script from the Terminal) to generate these plots. If the latter, please use the command below:
 
 ```sh
 ## Run from `02_MCMC_diagnostics/scripts` directory
@@ -141,7 +141,7 @@ cp -R plots/margVScalib sum_files_prior/
 
 Now it is time to analyse the samples we collected when running `MCMCtree` with our data!
 
-We will run the R script [`MCMC_diagnostics_posterior.R`](scripts/MCMC_diagnostics_posterior.R) (when using RStudio) or [`MCMC_diagnostics_posterior.R`](scripts/MCMC_diagnostics_posterior.R) (when running this script from the Terminal) and follow the detailed step-by-step instructions detailed in the script, which are essentially the same ones you used when analysing the samples collected when sampling from the prior.
+We will run the R script [`MCMC_diagnostics_posterior.R`](scripts/MCMC_diagnostics_posterior.R) (when using RStudio) or [`MCMC_diagnostics_posterior_terminal.R`](scripts/MCMC_diagnostics_posterior_terminal.R) (when running this script from the Terminal) and follow the detailed step-by-step instructions detailed in the script, which are essentially the same ones you used when analysing the samples collected when sampling from the prior.
 
 ```sh
 ## Run from `02_MCMC_diagnostics/scripts` directory
