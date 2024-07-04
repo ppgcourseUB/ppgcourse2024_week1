@@ -114,12 +114,18 @@ Once you are ready to get started with `RevBayes`, either by using the Docker co
 # Launch the next command from the location in your
 # file structure where you want the repository to
 # be saved
+
+# 1. in your own PC, you can clone the whole repository:
 git clone https://github.com/ppgcourseUB/ppgcourse2024.git
 # Access today's practical directory
 cd cd BayesianInference-SandraAlvarezCarretero/
 # Check that you can see `Lab_1` and `Lab_2` directories
 ls
 # You should see `Lab_1`, `Lab_2` and `README.md`.
+
+# 2. If your are within an executed container:
+ghget https://github.com/ppgcourseUB/ppgcourse2024_week1/blob/main/BayesianInference-SandraAlvarezCarretero/
+# if this command does not run for you, check the email with the instructions to download the repository in the /tmp foder and move the files to the ppguser directory using ghget
 ```
 
 ### Sharing a local directory on your OS with the Docker container
