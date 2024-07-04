@@ -89,7 +89,7 @@ Once the analyses is completed, you can visualize the support values over the no
 
 1.- Go to the folder for non-parametric bootstrap:
 
-`cd ../non_parametric`
+`cd ../non_parametric_bootstrap`
 
 2.- Modify the **`non_parametric_iqtree.sh`** script to include the best substitution model where it says **MODEL**. For time constraints, we will just run 5 bootstrap replicates, but normally you will use 100 bootstrap replicates or more (modify with the **-b** command).
 
