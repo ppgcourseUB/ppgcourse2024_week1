@@ -24,18 +24,18 @@ During this practical session, we will use various in-house scripts and tools to
 
 Before you get started, let's look at the data that you have managed to collect so far:
 
-* [**Molecular alignment**](raw_data/aln_seq/baliphy/P1-max.fasta): alignments inferred with `BAli-Phy` ([Redelings, 2021](https://academic.oup.com/bioinformatics/article/37/18/3032/6156619)) using the CYTB sequences of 8 mammals downloaded from the NCBI web server. For more information on how this molecular alignment has been generated, you can always [read the step-by-step tutorial in the `raw_data` directory](raw_data/README.md). To make sure you have time to go through this tutorial, however, please do not go through this dataset assembly pipeline until the end of this session.
-* [**Set of calibrations**](00_data_formatting/calibs/Calib_converter.txt): node age constraints to calibrate the phylogeny to geological time established according to our interpretation of the fossil record. More information about how they have been established later in the tutorial.
-* [**Phylogeny**](raw_data/aln_seq/baliphy/cytb_rooted_bl.tree): tree topology with branch lengths inferred with `BAli-Phy` ([Redelings, 2021](https://academic.oup.com/bioinformatics/article/37/18/3032/6156619)). For more information about how this phylogeny has been inferred, you can always [read the step-by-step tutorial in the `raw_data` directory](raw_data/README.md). To make sure you have time to go through this tutorial, however, please do not go through this dataset assembly pipeline until the end of this session.
+* [**Molecular alignment**](00_inp_data): all files that start with `aln_*` were inferred with `BAli-Phy` ([Redelings, 2021](https://academic.oup.com/bioinformatics/article/37/18/3032/6156619)) using the CYTB sequences of 8 mammals downloaded from the NCBI web server, then converted into PHYLIP format. For more information on how this molecular alignment has been generated, you can always [read the step-by-step tutorial in the `data_processing` directory](data_processing/README.md). To make sure you have time to go through this tutorial, however, please do not go through this dataset assembly pipeline until the end of this session.
+* [**Set of calibrations**](00_inp_data/calibs/inp_calibs/Calibnodes_cytb.csv): node age constraints to calibrate the phylogeny to geological time established according to our interpretation of the fossil record. The [`Include_calibrations_MCMCtree.R`](00_inp_data/calibs/scripts/Include_calibrations_MCMCtree.R) first used the raw calibration information ([`calibrations.txt`](00_inp_data/calibs/raw_calibs/calibrations.txt)) to generate [an intermediate file](00_inp_data/calibs/raw_calibs/cals_only_cytb.tree) that is subsequently used by another script ([`Merge_node_labes.R`](02_MCMC_diagnostics/scripts/Merge_node_labels.R)) to generate the final [`Calibnodes_cytb.csv`](00_inp_data/calibs/inp_calibs/Calibnodes_cytb.csv) file. We will not have time to learn how to go through this process but, given that the R scripts are well documented, feel free to go through them after this practical session!
+* [**Calibrated phylogeny**](00_inp_data/cytb_calib_MCMCtree.tree): calibrated phylogeny generated with the R script [`Include_calibrations_MCMCtree.R`](00_inp_data/calibs/scripts/Include_calibrations_MCMCtree.R). The phylogeny (i.e., tree topology with branch lengths) was inferred with `BAli-Phy` ([Redelings, 2021](https://academic.oup.com/bioinformatics/article/37/18/3032/6156619)). For more information about how this phylogeny was  inferred, you can always [read the step-by-step tutorial in the `data_processing` directory](data_processing/README.md). To make sure you have time to go through this tutorial, however, please do not go through this dataset assembly pipeline until the end of this session.
 
-Remember that, before proceeding with timetree inference, you need to get familiar with your dataset! For instance, you may ask yourselves questions such as "how were the data collected?", "how were the alignments generated?", or "how are the files going to be organised?". In this practical session, we are not going to address such questions as we will only have time to focus on the subsequent steps. Nevertheless, at the end of the session, you can always go through the step-by-step data assembly workflow available in the [`raw_data` directory](raw_data) to understand how the data were collected and processed. To learn more about the different steps that the phylogenomic workflow consists of, you may also want to read [Álvarez-Carretero & dos Reis, 2022](https://link.springer.com/chapter/10.1007/978-3-030-60181-2_13).
+Remember that, before proceeding with timetree inference, you need to get familiar with your dataset! For instance, you may ask yourselves questions such as "how were the data collected?", "how were the alignments generated?", or "how are the files going to be organised?". In this practical session, we are not going to address such questions as we will only have time to focus on the subsequent steps. Nevertheless, at the end of the session, you can always go through the step-by-step data assembly workflow available in the [`data_processing` directory](data_processing) to understand how the data were collected and processed. To learn more about the different steps that the phylogenomic workflow consists of, you may also want to read [Álvarez-Carretero & dos Reis, 2022](https://link.springer.com/chapter/10.1007/978-3-030-60181-2_13).
 
 ## Goals
 
 At the end of this practical session, you should...
 
 * ... be mindful about how important it is to be familiar with your dataset before proceeding with timetree inference.
-* ... understand how to parse and format input data for timetree inference with `PAML` programs.
+* ... understand the format that input data and control files require to run timetree inference analyses with `PAML` programs.
 * ... understand how to run `PAML` programs for timetree inference analysis. E.g., specifying substitution models, selecting the most adequate priors according to your dataset, specifying MCMC settings, etc.
 * ... understand how to run MCMC diagnostics to confidently assess whether your chains have potentially reached converged and how you can filter them before proceeding to summarise the results with the samples collected during the MCMC.
 * ... be able to critically discuss the results you have obtained according to your prior hypotheses and the settings under which the programs have been executed.
@@ -44,14 +44,13 @@ At the end of this practical session, you should...
 
 The summary of the workflow that you will go through during this practical session is described below:
 
-* Inferring the mean evolutionary rate to specify a sensible rate prior.
 * Running `PAML` software for timetree inference:
-  * Using various in-house pipelines to set up the working environment, the file structure, and the control files required to run `PAML` software - feel free to go back to the lecture content if you have questions about the options that are to be specified in `PAML` control files (e.g., nucleotide substitution model, tree prior, rate prior, MCMC settings, etc.).
+  * Using various in-house pipelines to set up the working environment, the file structure, and the control files required to run `PAML` software -- feel free to go back to the lecture content if you have questions about the options that are to be specified in `PAML` control files (e.g., nucleotide substitution model, tree prior, rate prior, MCMC settings, etc.).
   * Running `BASEML` to calculate the branch lengths, the gradient, and the Hessian, which `MCMCtree` will subsequently use to enable the approximate likelihood calculation to speed up timetree inference.
   * Running `MCMCtree`. We will carry out the following analyses to assess the impact that different relaxed-clock models and partitioning schemes can have on time estimates. Particularly, we will assess the following:
     * Relaxed-clock models
       * **Geometric Brownian motion (GBM)** model ([Thorne et al. 1998](http://www.ncbi.nlm.nih.gov/pubmed/9866200), [Yang and Rannala 2006](http://www.ncbi.nlm.nih.gov/pubmed/16177230)): autocorrelated-rates model.
-      * **Independent log-normal rate (ILN)** model ([Rannala and Yang 2007](http://www.ncbi.nlm.nih.gov/pubmed/17558967), [Lemey et al. 2010](http://www.ncbi.nlm.nih.gov/pubmed/20203288)): uncorrelated rates model
+      * **Independent log-normal rate (ILN)** model ([Rannala and Yang 2007](http://www.ncbi.nlm.nih.gov/pubmed/17558967), [Lemey et al. 2010](http://www.ncbi.nlm.nih.gov/pubmed/20203288)): uncorrelated-rates model
     * Partitioning schemes
       * **All codon positions (123CP)**: one alignment block with one gene alignment with all codon positions.
       * **Only first and second codon positions (12CP)**: one alignment block with only the first and the second codon positions.
@@ -67,15 +66,14 @@ The summary of the workflow that you will go through during this practical sessi
 
 > [!NOTE]
 >
-> * We will go through the first two steps together so that everyone starts the `PAML` analyses once all the details with regards to data formatting and the rate prior have been understood.
-> * To speed things up, not everyone will individually run the 8 `MCMCtree` analyses on their own when sampling from the posterior. Depending on how many people are attending this session, we will work in either 6 or 3 groups. If the former, each group of participants will run one analysis when sampling from the posterior while, if the latter, each group will run two.
-> * We will stop 15 minutes before the end of the practical session to discuss the results that you have obtained by that time. If you have not finished the analyses, please do not worry! I will share with you the results under the 6 different scenarios, and we can all have a general discussion about how different calibrations, partitioning schemes, and relaxed-clock models have affected the estimated divergence times in our bear phylogeny.
+> * We will go through these steps together so that everyone can follow all the steps involved in using `PAML` for timetree inference.
+> * We will stop 15 minutes before the end of the practical session to discuss the results that you have obtained by that time. If we have not finished the analyses, please do not worry! I will share with you the results (or you can run these analyses later), and we can all have a general discussion about how different  partitioning schemes and relaxed-clock models have affected the estimated divergence times in our bear phylogeny.
 
 ## Software
 
-We will be using a Docker container that has been generated for this course, where `PAML` (v4.10.7) has already been installed. If you want to run `PAML` programs on your own computer, you will first need to download the software in the version that is appropriate for your operating system (see [instructions below](README.md#running-paml-on-your-pc)).
+We will be using a Docker container that has been generated for this course, where `PAML` v4.10.7 has already been installed. If you want to run `PAML` programs on your own computer, you will first need to download the software in the version that is appropriate for your operating system (see [instructions below](README.md#running-paml-on-your-pc)).
 
-Once you decide whether you are using the Docker container or your own computer, we will be retrieving the [resources we will be going through during this practical session from the GitHub repository `ppgcourse2024`](https://github.com/ppgcourseUB/ppgcourse2024/). Please follow the guidelines below depending on what you have decided to use:
+Once you decide whether you are using the Docker container or your own computer, you can retrieve the [resources we will be going through during this practical session from the GitHub repository `ppgcourse2024`](https://github.com/ppgcourseUB/ppgcourse2024_week1). Please follow the guidelines below depending on what you have decided to use:
 
 ### Running `PAML` on a Docker container
 
@@ -193,7 +191,7 @@ If you want to run this practical session on your PC, please make sure you have 
 
 ### Running `R` and `RStudio`
 
-The Docker container will already have `R` installed, which you will use to parse various input and output files througout this practical session. Note that alltthe MCMC diagnostics will take place using a combination of in-house bash and R scripts, so it is important that you have `R` and `RStudio` on your PC! Below, you can find a list of what you will need to install on your PC to complete this part of the practical session:
+The Docker container will already have `R` installed, which you will use to parse various input and output files througout this practical session. Note that all the MCMC diagnostics will take place using a combination of in-house bash and R scripts, so it is important that you have `R` and `RStudio` on your PC! Below, you can find a list of what you will need to install on your PC to complete this part of the practical session:
 
 * **`R`** and **`RStudio`**: please download [R](https://cran.r-project.org/) and [RStudio](https://posit.co/download/rstudio-desktop/) as they are used throughout the tutorial. The packages we will be using should work with `R` versions that are either newer than or equal to v4.1.2. If you are a Windows user, please make sure that you have the correct version of `RTools` installed, which will allow you to install packages from the source code if required. For instance, if you have `R` v4.1.2, then installing `RTools4.0` shall be fine. If you have another `R` version installed on your PC, please check whether you need to install `RTools 4.2` or `RTools 4.3`. For more information on which version you should download, [please go to the CRAN website by following this link and download the version you need](https://cran.r-project.org/bin/windows/Rtools/).
 
@@ -226,12 +224,12 @@ The Docker container will already have `R` installed, which you will use to pars
 
 To parse and visualise the output files generated throghout this practical, **you will need to have installed the following programs on your PC even if you are using the Docker container**:
 
-* Unfortunately, the Docker container will not have the `devtools` nor the `mcmc3r` R packages installed. In order to fix this, please log in your Docker container and do the following:
+* If the Docker container does not have the `devtools` or the `mcmc3r` R packages installed, you will have to install them. You can check whether they are available by accessing the container and typing `R` on the Terminal to access the `R` interface. Then, please type `libary("devtools")` and `library("mcmc3r")`: if you get no errors you are fine!. If they are not installed, please run the following commands on your container:
 
   ```sh
   # 1. Log in R
   R
-  # 2. After logging in R, install the two packages
+  # 2. After logging in R, install the two required packages
   #    Select the server that is closer to your location!
   install.packages( "devtools" )
   devtools::install_github( "dosreislab/mcmc3r" )
@@ -239,7 +237,7 @@ To parse and visualise the output files generated throghout this practical, **yo
 
   To exit the R console, just type `q()`. You will not need to save the workspace, so type `n`.
 
-* **`TreeViewer`**: you can use `TreeViewer` ([Biacnhini and Sánchez-Baracaldo, 2024](https://onlinelibrary.wiley.com/doi/10.1002/ece3.10873)) as a graphical interface with which you can display and highlgy customise the format of the timetrees we will generate during this practical. You may want to read [the `TreeViewer` documentation](https://github.com/arklumpus/TreeViewer/wiki) to learn more about which modules you can use and how you can improve the design of your timetrees (e.g., include/exclude densities, include pictures, play with various colours and shapes, etc.). You can [download `TreeViewer` by following this link](https://treeviewer.org/).
+* **`TreeViewer`**: you can use `TreeViewer` ([Bianchini and Sánchez-Baracaldo, 2024](https://onlinelibrary.wiley.com/doi/10.1002/ece3.10873)) as a graphical interface with which you can display and highlgy customise the format of the timetrees we will generate during this practical. You may want to read [the `TreeViewer` documentation](https://github.com/arklumpus/TreeViewer/wiki) to learn more about which modules you can use and how you can improve the design of your timetrees (e.g., include/exclude densities, include pictures, play with various colours and shapes, etc.). You can [download `TreeViewer` by following this link](https://treeviewer.org/).
 * **`FigTree`**: alternatively, you can use `FigTree` to display the timetrees we will have generated. While not as customisable as `TreeViewer`, you can decide what you want to be displayed on the graphical interface by selecting the buttons and options that enable a specific design. You can [download the latest pre-compiled binaries, `FigTree v1.4.4`, from the `FigTree` GitHub repository](https://github.com/rambaut/figtree/releases).
 * **`Tracer`**: you can use this graphical interface to visually assess the quality of the MCMCs you have run during the analyses with `MCMCtree` (e.g., chain efficiency, chain convergence, autocorrelation, etc.). You can [download the latest pre-compiled binaries, `Tracer v1.7.2` at the time of writing, from the `Tracer` GitHub repository](https://github.com/beast-dev/tracer/releases/tag/v1.7.2).
 * **Visual Studio Code** (optional): for best experience with this practical session, I highly recommend you install Visual Studio Code and run everything within this platform to keep everything tidy, organised, and self-contained. You can download VSC from [their website](https://code.visualstudio.com/). If you are new to VSC, you can check their webinars to learn about its various features and how to make the most out of it. In addition, you may also want to install the following extensions:
@@ -259,10 +257,7 @@ Once you are ready to get started with this practical session, either by using t
 # be saved
 git clone https://github.com/ppgcourseUB/ppgcourse2024.git
 # Access today's practical directory
-cd cd BayesianTimetreInference-SandraAlvarezCarretero/
-# Check that you can see the main file structure
-ls
-# You should see `Lab_1`, `Lab_2` and `README.md`.
+cd BayesianTimetreInference-SandraAlvarezCarretero/
 ```
 
 ### Sharing a local directory on your OS with the Docker container
@@ -288,7 +283,7 @@ Please note that, once you stop the container (i.e., `docker stop ppgcourseub`),
 
 ## Data analysis
 
-If you have gone through the previous sections and have a clear understanding of the dataset you will be using, the workflow of the analyses you will be running, and have installed the required software to do so... Then you can start to analyse our bear dataset [by following this link](00_data_formatting/README.md).
+If you have gone through the previous sections and have a clear understanding of the dataset you will be using, the workflow of the analyses you will be running, and have installed the required software to do so... Then you can start to analyse our bear dataset [by following this link](01_timetree_inference/README.md).
 
 Happy timetree inference! :)
 

@@ -7,6 +7,6 @@ I have provided you with [example `tbi` files](tbi_files) (i.e., `TreeViewer` fi
 
 You can also find the [exported PDF files inside the `figs` directory](figs). Please note that all images have been retrieved from [Wikimedia Commons](https://commons.wikimedia.org/wiki/Main_Page) and have Creative Commons licenses.
 
-> **[ EXERCISE ]**
+> **EXERCISE**
 
 Open the `tbi` files on `TreeViewer` and try to reproduce the same plots but now with the other two alignments!

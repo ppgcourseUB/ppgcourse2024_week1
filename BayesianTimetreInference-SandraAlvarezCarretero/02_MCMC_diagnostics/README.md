@@ -72,7 +72,7 @@ count=$(( count + 1 ))
 done
 ```
 
-The script above will generate a directory called `mcmc_files_<name_dataset>_CLK` inside the `00_prior` directory, where the `mcmc.txt` with the concatenated samples will be saved. In addition, a directory called `mcmcf4traces_<namedataset>_CLK` will also be generated so that formatted MCMC files compatible with programs such as `Tracer` can be used to check for chain convergence. A template script to generate the `FigTree.tre` file with this `mcmc.txt` has been saved inside the [`dummy_ctl_files`](01_timetree_inference/dummy_ctl_files) directory.
+The script above will generate a directory called `mcmc_files_<name_dataset>_CLK` inside the `00_prior` directory, where the `mcmc.txt` with the concatenated samples will be saved. In addition, a directory called `mcmcf4traces_<namedataset>_CLK` will also be generated so that formatted MCMC files compatible with programs such as `Tracer` can be used to check for chain convergence. A template script to generate the `FigTree.tre` file with this `mcmc.txt` has been saved inside the [`dummy_ctl_files`](../01_timetree_inference/dummy_ctl_files) directory.
 
 We will now create a dummy alignment with only 2 nucleotides to quickly run `MCMCtree` with option `print = -1`. This setting will basically (i) ignore all the settings regarding the evolutionary model and the MCMC, (ii) read the `mcmc.txt` file which path is set in option `mcmcfile`, (iii) and summarise all the samples in such file to generate a timetree. To create the dummy alignment, we will run the in-house R script [`Generate_dummy_aln.R`](../01_timetree_inference/scripts/Generate_dummy_aln.R) (if using RStudio) or [`Generate_dummy_aln_terminal.R`](../01_timetree_inference/scripts/Generate_dummy_aln_terminal.R). If you are running the script from the Terminal, it will again take only one argument: the absolute path to the [`01_timetree_inference/scripts`](../01_timetree_inference/scripts) directory. Once you know the absolute path to such directory, please do the following:
 
@@ -141,7 +141,7 @@ cp -R plots/margVScalib sum_files_prior/
 
 Now it is time to analyse the samples we collected when running `MCMCtree` with our data!
 
-We will run the R script [`MCMC_diagnostics_posterior.R`](01_timetree_inference/scripts/MCMC_diagnostics_posterior.R) (when using RStudio) or [`MCMC_diagnostics_posterior.R`](01_timetree_inference/scripts/MCMC_diagnostics_posterior.R) (when running this script from the Terminal) and follow the detailed step-by-step instructions detailed in the script, which are essentially the same ones you used when analysing the samples collected when sampling from the prior. 
+We will run the R script [`MCMC_diagnostics_posterior.R`](scripts/MCMC_diagnostics_posterior.R) (when using RStudio) or [`MCMC_diagnostics_posterior.R`](scripts/MCMC_diagnostics_posterior.R) (when running this script from the Terminal) and follow the detailed step-by-step instructions detailed in the script, which are essentially the same ones you used when analysing the samples collected when sampling from the prior.
 
 ```sh
 ## Run from `02_MCMC_diagnostics/scripts` directory
@@ -205,7 +205,7 @@ Once the tasks above have finished, directories called `mcmc_files_cytb*[GBM|ILN
 ./run_post_for_tree.sh cytb_calib_MCMCtree.tree mcmctree
 ```
 
-Once you have your final timetrees estimated under the two different relaxed-clock models (yay!), we can run our [in-house R script](01_timetree_inference/scripts/Check_priors_VS_posteriors.R) to compare various distributions: marginal densities, calibration densities, and posterior time densities! These plots can help assess how informative the data are and check whether there are serious differences between the marginal densities and the posterior time densities.
+Once you have your final timetrees estimated under the two different relaxed-clock models (yay!), we can run our in-house R script ([`Check_priors_VS_posteriors.R`](scripts/Check_priors_VS_posteriors.R) for RStudio or [`Check_priors_VS_posteriors_terminal.R`](scripts/Check_priors_VS_posteriors_terminal.R) when using a Terminal) to compare various distributions: marginal densities, calibration densities, and posterior time densities! These plots can help assess how informative the data are and check whether there are serious differences between the marginal densities and the posterior time densities.
 
 Lastly, you can extract the final data that we used to write our manuscript as it follows:
 

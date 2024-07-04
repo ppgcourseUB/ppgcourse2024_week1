@@ -19,7 +19,7 @@ chmod 775 *sh
 ./prepare_baseml_struct.sh
 ```
 
-After running the command above, a new directory called `00_BASEML` will have been created with subdirectories `1`, `2`, and `3`. Inside each subdirectory, you shall find three modified copies of the [`template_paml.ctl` file](01_timetree_inference/template_paml.ctl) that can read each alignment block. Now, we will use the code snippet below to run `BASEML` in directories `00_BASEML/1`, `00_BASEML/2`, and `00_BASEML/3`:
+After running the command above, a new directory called `00_BASEML` will have been created with subdirectories `1`, `2`, and `3`. Inside each subdirectory, you shall find three modified copies of the [`template_paml.ctl` file](template_paml.ctl) that can read each alignment block. Now, we will use the code snippet below to run `BASEML` in directories `00_BASEML/1`, `00_BASEML/2`, and `00_BASEML/3`:
 
 ```sh
 ## Run from `00_BASEML`
@@ -177,7 +177,7 @@ We can check whether our paths have been properly exported!
 grep 'seqfile' ../01_MCMCtree/*/*/*/*/*ctl
 ```
 
-Now, we can run `MCMCtree`! You can either run it on your PC or decide whether you want to prepare a job array to run these analyses on a cluster (we will not discuss the latter in this quick start tutorial, but feel free to look at the job arrays and other pipelines we use throughout the [tutorial on reproducible timetree inference](../01_timetree_inference/01_MCMCtree/scripts/)):
+Now, we can run `MCMCtree`! You can either run it on your PC or decide whether you want to prepare a job array to run these analyses on a cluster (we will not discuss the latter in this quick start tutorial, but feel free to look at the job arrays and other pipelines we use throughout the [tutorial on reproducible timetree inference](https://github.com/sabifo4/Tutorial_MCMCtree/tree/main/)):
 
 ```sh
 ## Run from `01_MCMCtree`
@@ -229,4 +229,4 @@ grep 'Species tree for FigTree' -A1 00_prior/CLK/1/1/out.txt | sed -n '2,2p' > 0
 ```
 
 > [NOTE!]
-> When analysing your own datasets, you should always first run `MCMCtree` when sampling from the prior, proceed to [carry out MCMC diagnostics as explained below](./README.md#prior), and make sure that there are no problems between the calibration densities you specified and the marginal densities `MCMCtree` inferred. If you observed serious discrepancies, you would need to go back to your calibrations and check whether you made a mistake or you need to adjust them until the marginal densities really represent your belief about the fossil record. Then, once everything looks alright, you can run `MCMCtree` when sampling from the posterior, and then [run the corresponding MCMC diagnostics as explained below](./README.md#posterior). Nevertheless, we are running `MCMCtree` both when sampling from the prior and the posterior so that we can have the output files ready for both MCMC diagnostics while (hopefully!) completing this tutorial on time for this session :) You will see that this workflow (i.e., `prior --> checks --> prior again if checks failed --> check again --> posterior if everything is fine`) is the one you shall follow when running [my tutorial on reproducible timetree inference](https://github.com/sabifo4/Tutorial_MCMCtree/tree/main/01_PAML/01_MCMCtree).
+> When analysing your own datasets, you should always first run `MCMCtree` when sampling from the prior, proceed to [carry out MCMC diagnostics as explained in the next `README.md` file we shall go trough](../02_MCMC_diagnostics/README.md#prior), and make sure that there are no problems between the calibration densities you specified and the marginal densities `MCMCtree` inferred. If you observed serious discrepancies, you would need to go back to your calibrations and check whether you made a mistake or you need to adjust them until the marginal densities really represent your belief about the fossil record. Then, once everything looks alright, you can run `MCMCtree` when sampling from the posterior, and then [run the corresponding MCMC diagnostics as explained in the next `README.md` file we shall go trough](../02_MCMC_diagnostics/README.md#posterior). Nevertheless, we are running `MCMCtree` both when sampling from the prior and the posterior so that we can have the output files ready for both MCMC diagnostics while (hopefully!) completing this tutorial on time for this session :) You will see that this workflow (i.e., `prior --> checks --> prior again if checks failed --> check again --> posterior if everything is fine`) is the one you shall follow when running [my tutorial on reproducible timetree inference](https://github.com/sabifo4/Tutorial_MCMCtree/tree/main/01_PAML/01_MCMCtree).
