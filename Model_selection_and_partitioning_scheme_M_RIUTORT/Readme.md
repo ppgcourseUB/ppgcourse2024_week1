@@ -192,7 +192,7 @@ Here you have the content of this script:
 FOLDER="DATA/input_files"
 
 # running PartitionFinder
-/software/partitionfinder-2.1.1/PartitionFinder.py $FOLDER --raxml -p 8
+./software/partitionfinder-2.1.1/PartitionFinder.py $FOLDER --raxml -p 8
 ```
 
 > We are giving the ‘–-raxml’ command so that only the models of RAxML will be tested, this is going to do the run faster and you will be able to see the results immediately. We will also run another analysis wihtout the –raxml option, with beast at models command and greedy at the Schemes commad (it will take longer to run) to compare the results.
@@ -258,7 +258,7 @@ Now, you can execute the file *partition_finder2.run*:
 FOLDER="DATA/input_files"
 
 # running PartitionFinder
-/software/partitionfinder-2.1.1/PartitionFinder.py $FOLDER -p 8
+./software/partitionfinder-2.1.1/PartitionFinder.py $FOLDER -p 8
 ```
 
 > Notice that we are not giving the ‘–-raxml’ command so now all models present in `BEAST` will be tested, which will take longer than in our previous analyses because `RAxML` only offers "GTR", "GTRGAMMA" and "GTRGAMMA+I", while `BEAST` has a longer list of possibilities.
