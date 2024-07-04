@@ -76,6 +76,8 @@ We will use the concatenated alignment and the model obtained as the best fittin
 
 `iqtree -s 50_genes.fa -m MODEL -bb 1000 -nt 8 -redo`
 
+To close the program, press `Ctrl` + `x` 
+
 Once modified, you are ready to run the analysis:
 
 `bash ultrafast_iqtree.sh`
