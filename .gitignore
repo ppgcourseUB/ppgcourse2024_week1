@@ -1,0 +1,12 @@
+# [240307-SAC]
+# Ignore directories (and its content) generated during the tutorial
+BayesianTimetreInference-SandraAlvarezCarretero/01_timetree_inference/00_BASEML
+BayesianTimetreInference-SandraAlvarezCarretero/01_timetree_inference/01_MCMCtree
+BayesianTimetreInference-SandraAlvarezCarretero/01_timetree_inference/dummy_aln
+
+BayesianTimetreInference-SandraAlvarezCarretero/02_MCMC_diagnostics/out_RData
+BayesianTimetreInference-SandraAlvarezCarretero/02_MCMC_diagnostics/out_Rlogs
+BayesianTimetreInference-SandraAlvarezCarretero/02_MCMC_diagnostics/plots
+BayesianTimetreInference-SandraAlvarezCarretero/02_MCMC_diagnostics/sum_files_*
+
+BayesianTimetreInference-SandraAlvarezCarretero/src/fasta-phylip-partitions
