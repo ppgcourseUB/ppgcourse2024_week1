@@ -45,7 +45,7 @@ Please make sure you can use the Docker container if you do not have `RevBayes` 
 
     ```txt
     # REPOSITORY            TAG        IMAGE ID       CREATED      SIZE
-    # ppgcourseub/ppg2024   v1.1      7039bb0e5351   42 hours ago   17.3GB
+    # ppgcourseub/ppg24   latest      7039bb0e5351   42 hours ago   17.3GB
     ```
 
 * Now, run the Docker container! Depending on whether it is the first time or not, you will use different commands:
@@ -126,16 +126,10 @@ ls
 
 If you have cloned the repository on your PC and want to share this directory with the Docker container, please use the instructions given below:
 
-* Linux or WSL users should type the command `docker run -v <path_in_your_PC_to_the_repo>:<path_in_the_container_where_you_want_the_shared_repo> -it <name_container>`. Let's assume that the path to the repository in our OS is `/home/courses/2024/ppgcourse2024/ppgcourse2024_week1/BayesianInference-SandraAlvarezCarretero` and that we want it in `/home/ppguser/test` (i.e., you should have created a `test` directory inside your home directory before!). An example of how to run this command using the example above would be the following:
+* Type the command `docker run -v <path_in_your_PC_to_the_repo>:<path_in_the_container_where_you_want_the_shared_repo> -it <name_container>`. Let's assume that the path to the repository in our OS is `/home/courses/2024/ppgcourse2024/ppgcourse2024_week1/BayesianInference-SandraAlvarezCarretero` and that we want it in `/home/ppguser/test` (i.e., you should have created a `test` directory inside your home directory before!). An example of how to run this command using the example above would be the following:
 
     ```sh
-    docker run -v home/courses/2024/ppgcourse2024_week1/BayesianInference-SandraAlvarezCarretero:/home/ppguser/test -it ppgcourseub/ppg2024
-    ```
-
-* Mac users will need to slightly change the command above: instead of `-v`, please use `v`. Following the same example:
-
-    ```sh
-    docker run -v home/courses/2024/ppgcourse2024_week1/BayesianInference-SandraAlvarezCarretero:/home/ppguser/test -it ppgcourseub/ppg2024
+    docker run -v home/courses/2024/ppgcourse2024_week1/BayesianInference-SandraAlvarezCarretero:/home/ppguser/test -it ppgcourseub/ppg24
     ```
 
 Please note that, once you stop the container (i.e., `docker stop ppgcourseub`), this directory will stop being shared. In other words, when you start and access the Docker container again, you will see that the shared directory will have disappeared. If you want to create this shared directory once more, you will need to run the command above again!
