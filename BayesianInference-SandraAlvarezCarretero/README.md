@@ -116,9 +116,9 @@ Once you are ready to get started with `RevBayes`, either by using the Docker co
 # be saved
 
 # 1. in your own PC, you can clone the whole repository:
-git clone https://github.com/ppgcourseUB/ppgcourse2024.git
+git clone https://github.com/ppgcourseUB/ppgcourse2024_week1.git
 # Access today's practical directory
-cd cd BayesianInference-SandraAlvarezCarretero/
+cd BayesianInference-SandraAlvarezCarretero/
 # Check that you can see `Lab_1` and `Lab_2` directories
 ls
 # You should see `Lab_1`, `Lab_2` and `README.md`.
