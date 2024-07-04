@@ -101,7 +101,6 @@ For executing the analysis run:
 
 More information on non-parametric bootstrap in: http://www.iqtree.org/doc/Tutorial#assessing-branch-supports-with--standard-nonparametric-bootstrap
 
-***
 
 Once finished (this may take a while), you can check the execution time in the **.log** files in each of the above folders. You can visualize the output trees in your preferred visualization software.
 
