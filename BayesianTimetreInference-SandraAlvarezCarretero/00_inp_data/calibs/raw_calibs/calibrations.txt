@@ -1,0 +1,3 @@
+name;tip1;tip2;MCMCtree
+caniformia;ail_mel;tre_orn;'B(0.3771,0.6609)'
+ursinae;mel_urs;urs_mar;'L(0.0184)'
