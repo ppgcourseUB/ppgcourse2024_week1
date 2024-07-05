@@ -44,8 +44,8 @@ Please make sure you can use the Docker container if you do not have `RevBayes` 
     Your output may resemble the text displayed below:
 
     ```txt
-    # REPOSITORY            TAG        IMAGE ID       CREATED      SIZE
-    # ppgcourseub/ppg24   latest      7039bb0e5351   42 hours ago   17.3GB
+    # REPOSITORY          TAG          IMAGE ID       CREATED      SIZE
+    ppgcourseub/ppg24   latest      7039bb0e5351   42 hours ago   17.3GB
     ```
 
 * Now, run the Docker container! Depending on whether it is the first time or not, you will use different commands:
@@ -113,9 +113,10 @@ Once you are ready to get started with `RevBayes`, either by using the Docker co
 ```sh
 # Launch the next command from the location in your
 # file structure where you want the repository to
-# be saved
+# be saved -- chose option 1 or option 2 depending
+# on where you are running the practical session
 
-# 1. in your own PC, you can clone the whole repository:
+# 1.You can clone the whole repository in your own PC:
 git clone https://github.com/ppgcourseUB/ppgcourse2024_week1.git
 # Access today's practical directory
 cd BayesianInference-SandraAlvarezCarretero/

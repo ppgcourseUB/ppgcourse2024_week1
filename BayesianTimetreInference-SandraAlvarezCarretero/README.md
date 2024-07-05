@@ -89,8 +89,8 @@ Please make sure you can use the Docker container if you have not installed `PAM
     Your output may resemble the text displayed below:
 
     ```txt
-    # REPOSITORY            TAG        IMAGE ID       CREATED      SIZE
-    # ppgcourseub/ppg2024   v1.1      7039bb0e5351   42 hours ago   17.3GB
+    # REPOSITORY          TAG          IMAGE ID       CREATED      SIZE
+    ppgcourseub/ppg24   latest      7039bb0e5351   42 hours ago   17.3GB
     ```
 
 * Now, run the Docker container! Depending on whether it is the first time or not, you will use different commands:
@@ -254,26 +254,27 @@ Once you are ready to get started with this practical session, either by using t
 ```sh
 # Launch the next command from the location in your
 # file structure where you want the repository to
-# be saved
-git clone https://github.com/ppgcourseUB/ppgcourse2024.git
+# be saved -- chose option 1 or option 2 depending
+# on where you are running the practical session
+
+# 1. You can clone the whole repository in your own PC:
+git clone https://github.com/ppgcourseUB/ppgcourse2024_week1.git
 # Access today's practical directory
 cd BayesianTimetreInference-SandraAlvarezCarretero/
+
+# 2. If your are within an executed container:
+ghget https://github.com/ppgcourseUB/ppgcourse2024_week1/blob/main/BayesianInference-SandraAlvarezCarretero/
+# if this command does not run for you, check the email with the instructions to download the repository in the /tmp foder and move the files to the ppguser directory using ghget
 ```
 
 ### Sharing a local directory on your OS with the Docker container
 
 If you are using a Docker container but you have cloned the repository on your PC, you may want to share this directory with the Docker container so that it is easier to visualise the results with some of the graphical interfaces that you can only use on your PC. If that is the case, please use the instructions given below:
 
-* Linux or WSL users should type the command `docker run -v <path_in_your_PC_to_the_repo>:<path_in_the_container_where_you_want_the_shared_repo> -it <name_container>`. Let's assume that the path to the repository in our OS is `/home/courses/2024/ppgcourse2024/ppgcourse2024_week1/BayesianTimetreeInference-SandraAlvarezCarretero` and that we want it in `/home/ppguser/test` (i.e., you should have created a `test` directory inside your home directory before!). An example of how to run this command using the example above would be the following:
+* Type the command `docker run -v <path_in_your_PC_to_the_repo>:<path_in_the_container_where_you_want_the_shared_repo> -it <name_container>`. Let's assume that the path to the repository in our OS is `/home/courses/2024/ppgcourse2024/ppgcourse2024_week1/BayesianTimetreeInference-SandraAlvarezCarretero` and that we want it in `/home/ppguser/test` (i.e., you should have created a `test` directory inside your home directory before!). An example of how to run this command using the example above would be the following:
 
     ```sh
-    docker run -v home/courses/2024/ppgcourse2024_week1/BayesianTimetreeInference-SandraAlvarezCarretero:/home/ppguser/test -it ppgcourseub/ppg2024
-    ```
-
-* Mac users will need to slightly change the command above: instead of `-v`, please use `v`. Following the same example above:
-
-    ```sh
-    docker run -v home/courses/2024/ppgcourse2024_week1/BayesianTimetreeInference-SandraAlvarezCarretero:/home/ppguser/test -it ppgcourseub/ppg2024
+    docker run -v home/courses/2024/ppgcourse2024_week1/BayesianTimetreeInference-SandraAlvarezCarretero:/home/ppguser/test -it ppgcourseub/ppg24
     ```
 
 Please note that, once you stop the container (i.e., `docker stop ppgcourseub`), this directory will stop being shared. In other words, when you start and access the Docker container again, you will see that the shared directory will have disappeared. If you want to create this shared directory once more, you will need to run the command above again!
